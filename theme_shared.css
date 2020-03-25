@@ -1,0 +1,218 @@
+/* General / structure */
+body {
+    width: 70em;
+    max-width: 100%;
+    margin: auto;
+}
+main {
+    margin-top: 0.5em;
+}
+#main-content {
+    margin-right: 20%;
+    padding-right: 0.5em;
+
+}
+#side-panel {
+    float: right;
+    width: 20%;
+    margin-left: 0.5em;
+}
+.breadcrumb {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+
+    font-family: monospace;
+    font-size: 1.1em;
+}
+form {
+    margin: 0.5em 0;
+
+    padding-top: 0.8em;
+}
+form fieldset {
+    max-width: 50%;
+    display: block;
+    margin: auto;
+    text-align: right;
+    padding-right: 1.5em;
+
+    border-width: 0;
+    border-top-width: initial;
+}
+form fieldset legend {
+    margin-top: -0.8em;
+}
+form fieldset input {
+    margin: 0.2em 0;
+}
+footer {
+    padding-left: 15%;
+    padding-bottom: 5%;
+    margin-right: 2em;
+    max-width: 1000px;
+    float: right;
+    font-size: 0.9em;
+
+    background-image: url("graphics/footer-profile.png");
+    background-size: 14%;
+    background-position: 2% 2em;
+    background-repeat: no-repeat;
+}
+
+
+/* Site-heading */
+    /* Logo, title */
+header > * {
+    display: inline-block;
+    margin: 0.5em 0.5em 0 0;
+}
+#site-logo, #site-logo > img {
+    vertical-align: top;
+    width: 8em;
+    padding: 0 0 0.1em 0.1em;
+}
+#site-title {
+    display: block;
+    margin-top: 0.4em;
+
+    font-size: 2em;
+}
+#site-description {
+    display: block;
+    margin: 0.3em 0 -1em 0.5em;
+
+    padding-right: 3em;
+    border-bottom: 0.1em black solid;
+}
+
+    /* Navigation */
+header > nav {
+    display: block;
+
+    vertical-align: bottom;
+    margin: 0;
+}
+header > nav ul {
+    padding-left: 0;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+header > nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    min-width: 6.5em;
+    overflow-wrap: break-word;
+
+    transition: background-color 1s ease-in;
+}
+header > nav ul li:hover {
+    border-top-width: 0.15em;
+    border-bottom-width: 0.15em;
+
+    margin-top: -0.15em;
+    margin-bottom: -0.15em;
+}
+header > nav ul li a {
+    display: block;
+
+    min-height: 2em;
+    background-position: left;
+    background-repeat: no-repeat;
+    /* On left: 2em space for icons plus 0.5em */
+    padding: 0.5em 0 0 2em;
+
+    font-size: 1.3em;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+#link-computers {
+    background-position-x: 1em;
+    background-image: url("graphics/cat-brand.png");
+    background-size: 1em 2em;
+}
+#link-components {
+    background-image: url("graphics/cat-components.png");
+    background-size: 2em 2em;
+}
+#link-devices {
+    background-image: url("graphics/cat-peripherials.png");
+    background-size: 2em 1.58em;
+}
+#link-discounts {
+    background-position-x: 0.5em;
+    background-image: url("graphics/cat-discount.png");
+    background-size: 1.5em 1.5em;
+}
+@media (max-width: 800px) {
+    #link-computers {
+        background-position-x: 0;
+        padding-left: 1em;
+    }
+    #link-discounts {
+        background-position-x: 0;
+        padding-left: 1.5em;
+    }
+}
+header > nav ul li span {
+    padding: 0 0.5em;
+}
+
+/* More precise selections */
+#site-title, #site-description, form fieldset legend {
+    font-family: Impact, Charcoal, sans-serif;
+}
+#side-panel form fieldset {
+    text-align: initial;
+    padding-right: 5%;
+    padding-left: 0.2em;
+    max-width: initial;
+}
+#side-panel form fieldset input {
+    box-sizing: border-box;
+    width: 100%;
+}
+#side-panel form fieldset input[type="submit"] {
+    width: 80%;
+}
+#main-content > :first-child {
+    padding-top: 1.5em;
+}
+#side-panel > :first-child {
+    padding-top: 1em;
+}
+#opening_hours {
+    float: left;
+    text-align: center;
+    vertical-align: center;
+
+    margin: 1em;
+    font-size: initial;
+}
+
+@media (max-width: 800px) {
+    #side-panel {
+        display: none;
+    }
+    #main-content {
+        margin-right: 0;
+        padding-right: 0;
+    }
+    #site-logo, #site-logo > img {
+        width: 5em;
+    }
+    header > nav ul li {
+        min-width: initial;
+        font-size: 1.5em;
+        padding: 0 1em; /* Larger surface */
+    }
+    header > nav ul li a span {
+        display: none;
+    }
+    footer {
+        text-align: justify;
+        padding-left: 0;
+        background-image: none;
+    }
+}

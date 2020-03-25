@@ -1,0 +1,99 @@
+#main-content > * {
+    /*background-color: #c0ea58;*/
+    background-color: rgba(192, 234, 88, 0.2);
+}
+header {
+    /*background-color: #B0E0E6; v1*/
+    /*background-color: #1A2930;*/
+    background-color: rgb(220, 220, 220);/*gainsboro*/
+
+    /* vagy background-color: #A9A9A9;*/
+    border-top: 0.15em black solid;
+}
+#main-content, header > nav {
+    border-left: 0.15em grey solid;
+}
+#main-content > *, #side-panel, header > nav {
+    border-right: 0.15em grey solid;
+}
+header > nav ul li {
+    border-top: 0 gray solid;
+    border-bottom: 0 gray solid;
+}
+header > nav ul li a {
+    color: brown;
+}
+#site-title {
+    color: black;
+}
+header > nav {
+    /*background-color: #9099A2;*/
+    background-color: #C5C1C0;
+}
+
+form fieldset {
+    border-top-color: black;
+}
+
+.item-section .breadcrumb, .item-section .breadcrumb * {
+    /*background-color: #86B3D1;*/
+    /*background-color: #938c8c;*/
+    /*background-color: #FF850D;*/
+    color: rgb(25,24,22);
+}
+
+.item-section {
+    background-color: rgba(0,0,0,0.1);
+}
+.item-section article, .item-section section {
+    /*background-color: #d0d0d0;*/
+    background-color: #ccc0b2;
+
+    border-radius: 0.25em;
+    /*border-width: 0.25em 0.05em 0;*/
+    border-width: 0.15em;
+    border: gray solid;
+    border-style: inset;
+    border-top-color: black;
+}
+.item-section > .item-discount, .item-section section {
+    border-bottom-style: dashed;
+    border-top-style: solid;
+    border-width: 0.15em;
+}
+.item-section section {
+    border-style: dotted;
+}
+.amount-of-discount {
+    color: red;
+}
+.modpanel-section-additem * {
+    color: gray;
+}
+.modpanel-section-additem p {
+    color: black;
+}
+
+#listing-computers.design-triangle {
+    border-left-color: rgba(255, 0, 0, 1);
+    border-top-color: rgba(255, 0, 0, 1);
+}
+#listing-computers + .item-section > .breadcrumb {
+    background-color: rgb(255,161,77);
+    border-width: 0.1em 0 0;
+    border-color: rgb(102,96,89);
+    border-style: dotted;
+}
+#listing-computers + .item-section {
+    background-color: rgba(153,144,133, 0.5);
+}
+
+footer {
+    background-color: rgba(220, 220, 220, 0.5);
+}
+#opening_hours th {
+    background-color: #C5C1C0;
+}
+#opening_hours td {
+    background-color: rgba(220, 220, 220, 0.5);
+}

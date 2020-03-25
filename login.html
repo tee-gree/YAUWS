@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="theme_shared.css" type="text/css">
+    <link rel="stylesheet" href="theme_listing.css" type="text/css">
+    <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
+    <link rel="stylesheet" href="colors.css" type="text/css">
+    <style rel="stylesheet">
+        #side-panel {
+            display: none;
+        }
+        #main-content > * {
+            border-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+    <header>
+        <a href="" id="site-logo">
+            <img src="graphics/site-profile.svg">
+        </a>
+        <div id="site-main-header">
+            <a href="">
+                <span id="site-title">MehInformatik</span>
+            </a>
+            <span id="site-description">Kapod, amit látsz</span>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#listing-computers" id="link-computers">
+                        <span>Kész gépek</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#listing-components" id="link-components">
+                        <span>Részegységek</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#listing-devices" id="link-devices">
+                        <span>Eszközök</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#listing-discounts" id="link-discounts">
+                        <span>Szezonális</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="side-panel">
+            <form action="login.php" method="post">
+                <fieldset>
+                    <legend>Belépés</legend>
+                    <label for="side-userlogin-id">Email</label><br>
+                    <input type="email" id="side-userlogin-id" name="userlogin-id" required><br>
+                    <label for="side-userlogin-password">Jelszó</label><br>
+                    <input type="password" id="side-userlogin-password" name="userlogin-password" required><br>
+                    <input type="submit" value="Küldés">
+                </fieldset>
+            </form>
+        </section>
+        <div id="main-content">
+            <form action="login.php" method="post">
+                <fieldset>
+                    <legend>Belépés</legend>
+                    <label for="side-userlogin-id">Email</label><br>
+                    <input type="email" id="side-userlogin-id" name="userlogin-id" required><br>
+                    <label for="side-userlogin-password">Jelszó</label><br>
+                    <input type="password" id="side-userlogin-password" name="userlogin-password" required><br>
+                    <input type="submit" value="Küldés">
+                </fieldset>
+            </form>
+            <form action="register.php" method="post" id="reg-form">
+                <fieldset>
+                    <legend>Új Fiók Létrehozása</legend>
+                    <label for="userreg-name">Teljes neve:</label>
+                    <input id="userreg-name" name="reg-name" required>
+                    <br>
+                    <label for="userreg-email">E-mail címe:</label>
+                    <input type="email" id="userreg-email" name="reg-email" required>
+                    <br>
+                    <label for="userreg-email2">E-mail ismét:</label>
+                    <input type="email" id="userreg-email2" name="reg-email2" required>
+                    <br>
+                    <input type="submit" value="Küldés">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <table id="opening_hours">
+            <caption>Nyitvatartási rend</caption>
+            <tr>
+                <th>Nap</th>
+                <th>Nyitva</th>
+            </tr>
+            <tr>
+                <td>Hétfő-Péntek</td>
+                <td>8-16 óra</td>
+            </tr>
+            <tr>
+                <td>Szombat</td>
+                <td>8-14 óra</td>
+            </tr>
+            <tr>
+                <td>Vasárnap</td>
+                <td>--</td>
+            </tr>
+        </table>
+        <p>
+            Vállalkozásunk kis- és középvállalatok, illetve magánszemélyek számára áll rendelkezésre számítástechnikai eszközök internetes eladásával.
+        </p>
+        <p>
+            Átvétel: A személyes átvételt preferálók pesti telephelyünkön, egyébként Foxpost-, illetve MPL csomagautomatával és futárral oldható meg.
+        </p>
+    </footer>
+</body>
+</html>

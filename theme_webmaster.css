@@ -1,0 +1,33 @@
+.item-section > .modpanel-section-additem {
+    padding: 0;
+    /*height: 25.6em;*/
+}
+.modpanel-section-additem > a {
+    padding: 0;
+    /*height: 20.6em;*/
+
+    display: block;
+}
+.modpanel-section-additem > a :first-child {
+    margin-top: 3em;
+}
+.modpanel-section-additem > a :first-child * {
+    margin: 0;
+}
+
+.modpanel-section-additem * {
+    text-decoration: none;
+}
+.modpanel-section-additem p::after {
+    content: '+';
+    font-size: 200%;
+    display: block;
+    margin: 0.2em 0;
+    line-height: 0.7em;
+}
+.modpanel-section-additem p, .modpanel-section-additem span {
+    display: block;
+    text-align: center;
+    margin: 0;
+    font-size: 175%;
+}

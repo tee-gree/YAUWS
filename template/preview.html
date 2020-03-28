@@ -1,39 +1,20 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <!--
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    -->
     <meta charset="UTF-8">
     <title>Title</title>
 
     <link rel="stylesheet" href="site_structure.css" type="text/css">
+    <link rel="stylesheet" href="theme_palette.css" type="text/css">
     <link rel="stylesheet" href="theme_units.css" type="text/css">
     <link rel="stylesheet" href="theme_shopping-cart.css" type="text/css">
     <link rel="stylesheet" href="theme_listing.css" type="text/css">
     <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
-    <link rel="stylesheet" href="theme_palette.css" type="text/css">
 </head>
 <body>
     <a id="top"></a>
     <header>
-        <h3 class="preview-banner">Vigyázat! Előnézeti módban van!</h3>
+        <h3 class="warning-banner preview-banner">Vigyázat! Előnézeti módban van!</h3>
         <a href="index.html" id="site-logo">
             <!--<img src="graphics/site-profile.png">-->
             <img src="graphics/site-profile.svg">
@@ -45,18 +26,20 @@
             <span id="site-description">Kapod, amit látsz</span>
         </div>
         <div class="cart-summary mobile">
-            <h3 class="title">Kosár</h3>
-            <dl title="Kosár tartalma">
-                <dt>Termékek száma</dt>
-                <dd class="quantity">
-                    <span>0 <span class="unit">termék</span></span>
-                </dd>
+            <a href="summary.html?view=cart">
+                <h3 class="title">Kosár</h3>
+                <dl title="Kosár tartalma">
+                    <dt>Termékek száma</dt>
+                    <dd class="quantity">
+                        <span>0 <span class="unit">termék</span></span>
+                    </dd>
 
-                <dt>Összeg</dt>
-                <dd class="sum">
-                    <span>0 <span class="unit">Ft-.</span></span>
-                </dd>
-            </dl>
+                    <dt>Összeg</dt>
+                    <dd class="sum">
+                        <span>0 <span class="unit">Ft-.</span></span>
+                    </dd>
+                </dl>
+            </a>
         </div>
         <nav>
             <ul>
@@ -85,30 +68,32 @@
         </nav>
         <p class="login-banner mobile has-session">
             Belépve,&nbsp;mint
-            <a href="summary.html?view=profile" class="username">Altavista</a>!<br>
-            (<a href="summary.html?view=profile">Profil megtekintése</a>)
+            <a href="show.html?view=profile" class="username">Altavista</a>!<br>
+            (<a href="show.html?view=profile">Profil megtekintése</a>)
         </p>
     </header>
     <main>
         <section id="side-panel">
             <div class="cart-summary cart-empty">
-                <h3 class="title">Kosár</h3>
-                <dl title="Kosár tartalma">
-                    <dt>Termékek száma</dt>
-                    <dd class="quantity">
-                        <span>0 <span class="unit">termék</span></span>
-                    </dd>
+                <a href="summary.html?view=cart">
+                    <h3 class="title">Kosár</h3>
+                    <dl title="Kosár tartalma">
+                        <dt>Termékek száma</dt>
+                        <dd class="quantity">
+                            <span>0 <span class="unit">termék</span></span>
+                        </dd>
 
-                    <dt>Összeg</dt>
-                    <dd class="sum">
-                        <span>0 <span class="unit">Ft-.</span></span>
-                    </dd>
-            </dl>
+                        <dt>Összeg</dt>
+                        <dd class="sum">
+                            <span>0 <span class="unit">Ft-.</span></span>
+                        </dd>
+                    </dl>
+                </a>
             </div>
             <p class="login-banner has-session">
                 Belépve,&nbsp;mint
-                <a href="summary.html?view=profile" class="username">Altavista</a>!<br>
-                (<a href="summary.html?view=profile">Profil megtekintése</a>)
+                <a href="show.html?view=profile" class="username">Altavista</a>!<br>
+                (<a href="show.html?view=profile">Profil megtekintése</a>)
             </p>
             <section id="site-news">
                 <h3 class="title">Hírek</h3>
@@ -121,7 +106,7 @@
                 <div class="breadcrumb"> &gt;
                     <a href="#top">Főoldal</a> &gt;
                     <a href="#listing-computers"><h2>Kész&nbsp;gépek</h2></a>
-                    <span class="modbox"><!--Disallows line-wrapping between the links-->
+                    <span class="knobs"><!--Disallows line-wrapping between the links-->
                         <a href="edit.html?view=prod_manage&formid=1"
                             >&lt;-&nbsp;Vissza</a><a href="summary.html?view=prod_manage&formid=1"
                             >Összesítés&nbsp;-&gt;
@@ -261,7 +246,7 @@
     </main>
     <footer>
         <table id="opening_hours">
-            <caption>Nyitvatartási rend</caption>
+            <caption class="top">Nyitvatartási rend</caption>
             <tr>
                 <th>Nap</th>
                 <th>Nyitva</th>

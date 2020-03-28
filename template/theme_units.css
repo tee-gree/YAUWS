@@ -1,6 +1,12 @@
 /*
  - Breadcrumb
+ - Certain Banners
+ - Caption positioning using HTML (.top / .bottom)
+ - Aggregate(d data)
  - Form
+ - "Binary-checked" form
+ - Table
+ - Listing-knobs
 */
 .breadcrumb {
     position: -webkit-sticky; /* Safari */
@@ -9,6 +15,30 @@
 
     font-size: 1.1em;
 }
+.warning-banner {
+    display: block;
+    text-align: center;
+}
+table caption.top {
+    caption-side: top;
+}
+table caption.bottom {
+    caption-side: bottom;
+}
+
+.aggregate {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 50%;
+
+    margin-top: 1em;
+}
+.aggregate th, .aggregate td {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5em;
+}
+
 form {
     margin: 0.5em 0;
 
@@ -31,4 +61,52 @@ form fieldset input {
     margin: 0.2em 0;
 }
 
+form.binary-checking .warning-banner {
+    display: none;
+}
 
+form.binary-checking
+  input[type="radio"][checked]:not(:checked)
+  ~ .warning-banner {
+    display: block;
+}
+form.binary-checking
+  input[type="radio"]:not([checked]):checked
+  ~ .warning-banner {
+    display: block;
+}
+form.binary-checking
+  input[type="checkbox"][checked]:not(:checked)
+  ~ .warning-banner {
+    display: block;
+}
+form.binary-checking
+  input[type="checkbox"]:not([checked]):checked
+  ~ .warning-banner {
+    display: block;
+}
+
+table td, table th {
+    padding: 0.1em 1em;
+}
+
+.knobs {
+    display: inline-block;
+
+    border: 0.1em black solid;
+    border-radius: 0.2em;
+    padding: 0 0.15em;
+}
+.knobs > * {
+    display: inline-block;
+
+    border: black solid;
+    border-width: 0 0.1em;
+    padding: 0.3em 0.4em;
+}
+.knobs > :first-child {
+    border-left: 0;
+}
+.knobs > :last-child {
+    border-right: 0;
+}

@@ -4,9 +4,33 @@
  - Text styling
 */
 
-.preview-banner {
-    color: red;
-    background-color: #938C8C;
+header a, .cart-summary a, .item-section a, .breadcrumb a, .knobs a {
+    text-decoration: none;
+}
+.knobs a {
+    color: rgb(42,40,48);
+}
+.profile-view a, .profile-view a:visited, .profile-view a:focus, .profile-view a:active {
+    color: blue;
+}
+
+.warning-banner {
+    color: white;
+    background-color: red; /*#938C8C*/
+    font-size: 1.1em;
+    font-weight: bold;
+}
+table caption.top {
+    border-bottom: 0.2em #C5C1C0 solid;
+}
+table caption.bottom {
+    border-top: 0.2em #C5C1C0 solid;
+}
+table th {
+    background-color: #C5C1C0;
+}
+table td {
+    background-color: rgba(220, 220, 220, 0.5);
 }
 header, #side-panel .cart-summary, #site-news .title {
     background-color: rgb(220, 220, 220);/*gainsboro*/
@@ -25,7 +49,17 @@ header > nav, #main-content > *, #side-panel, footer {
     /*background-color: rgba(192, 234, 88, 0.2);*/
 }
 
+.knobs {
+    background: rgb(122,120,128);
+    background: linear-gradient(0deg, rgba(62,60,68,1) 0%, rgba(171,171,186,1) 65%, rgba(114,128,131,1) 100%);
 
+    font-weight: bold;
+}
+.knobs > .active {
+    background: rgb(162,160,168);
+    /*background: linear-gradient(0deg, rgba(62,60,68,0.49754901960784315) 0%, rgba(171,171,186,0.5) 27%, rgba(114,128,131,0.5) 100%);*/
+    background: linear-gradient(0deg, rgb(92,90,98) 0%, rgb(201,201,216) 27%, rgb(144,158,161) 100%);
+}
 
 header > nav, .cart-summary .title {
     /*background-color: #9099A2;*/
@@ -41,7 +75,7 @@ header > nav ul li {
 header > nav ul li a, header .login-link {
     color: brown;
 }
-#site-title {
+#site-title, header a, #side-panel a {
     color: black;
 }
 
@@ -125,24 +159,17 @@ footer {
 
     border-top: 0.5em #C5C1C0 dotted;
 }
-#opening_hours th {
-    background-color: #C5C1C0;
-}
-#opening_hours td {
-    background-color: rgba(220, 220, 220, 0.5);
-}
 
 /* --------- Fonts & Text styling --------- */
 
 /* Site and form header */
-#site-title, #site-description, form fieldset legend { 
+#site-title, #site-description, form fieldset legend, .knobs > * { 
     font-family: Impact, Charcoal, sans-serif;
 }
 
 /* Header navigation */
 header a { 
     font-family: sans-serif;
-    text-decoration: none;
 }
 
 /* Listing header */

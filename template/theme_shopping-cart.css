@@ -1,0 +1,89 @@
+/*
+Details about current shopping cart inside:
+ - the <header> tag
+ - the #side-panel block
+*/
+.cart-summary.mobile {
+    display: none;
+}
+.cart-summary dl {
+    margin: 0;
+    line-height: 1.2em;
+    font-size: 1.2em;
+}
+.cart-summary * {
+    margin: 0;
+}
+.cart-summary .title {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.2em;
+
+    line-height: 1.4em;
+    margin-bottom: 0.2em;
+}
+.cart-summary dt {
+    display: none;
+}
+.cart-summary .quantity {
+    display: inline-block;
+
+    padding-left: 1.2em;
+    background-image: url("graphics/cart-icon.svg");
+    background-size: 1.15em 1.15em;
+    background-repeat: no-repeat;
+}
+.cart-summary .sum {
+    float: right;
+}
+
+.cart-summary .quantity .unit {
+    display: none;
+}
+.cart-summary.cart-empty .quantity .unit {
+    display: inherit;
+}
+.cart-summary.cart-empty .sum {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .cart-summary.mobile {
+        display: inherit;
+        text-align: right;
+
+        height: 1.5em;
+        line-height: 1.5em;
+        font-size: 1.5em;
+
+        margin: 0.5em 0.3em 0 0;
+    }
+    .cart-summary.mobile .title {
+        display: none;
+    }
+    .cart-summary.mobile dl {
+        display: inline-block;
+        border-bottom: 0.1em black solid;
+    }
+    .cart-summary.mobile .quantity {
+        padding-left: 1.6em;
+        background-size: 1.2em 1.2em;
+
+        margin-right: 0.5em;
+    }
+    .cart-summary.mobile .sum {
+        margin-left: 0.5em;
+    }
+    .cart-summary.mobile .quantity .unit {
+        display: inherit;
+    }
+    .cart-summary.mobile.cart-empty .sum {
+        display: none;
+    }
+    .cart-summary.mobile.cart-empty dd * {
+        display: none;
+    }
+    .cart-summary.mobile.cart-empty .quantity:after {
+        content: 'Üres';
+    }
+}

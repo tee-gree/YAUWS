@@ -1,0 +1,180 @@
+/*
+ - Colors
+ - Font families, text styling
+ - Text styling
+*/
+
+.preview-banner {
+    color: red;
+    background-color: #938C8C;
+}
+header, #side-panel .cart-summary, #site-news .title {
+    background-color: rgb(220, 220, 220);/*gainsboro*/
+
+    border-top: 0.15em black solid;
+}
+header > nav, #main-content, footer {
+    border-left: 0.15em grey solid;
+}
+header > nav, #main-content > *, #side-panel, footer {
+    border-right: 0.15em grey solid;
+}
+
+#main-content > * {
+    /*background-color: #c0ea58;*/
+    /*background-color: rgba(192, 234, 88, 0.2);*/
+}
+
+
+
+header > nav, .cart-summary .title {
+    /*background-color: #9099A2;*/
+    background-color: #C5C1C0;
+}
+.cart-summary.mobile .quantity * {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+header > nav ul li {
+    border-top: 0 gray solid;
+    border-bottom: 0 gray solid;
+}
+header > nav ul li a, header .login-link {
+    color: brown;
+}
+#site-title {
+    color: black;
+}
+
+.login-banner, .login-banner *, #site-news .title {
+    color: black;
+}
+
+form fieldset {
+    border-top-color: black;
+}
+/*background-color: rgba(153,144,133, 0.5);*/
+.item-section .breadcrumb, .item-section .breadcrumb * {
+    
+    color: rgb(25,24,22);
+}
+.item-section .breadcrumb {
+    border-width: 0.1em 0 0;
+    border-color: rgb(102,96,89);
+    border-style: dotted;
+}
+
+.item-section {/* FFF5E8 DBC7AC */
+    background-color: #738090;
+}
+.item-section article, .item-section section {
+    background-color: rgba(192, 234, 238, 0.4);
+
+
+    border-radius: 0.25em;
+    /*border-width: 0.25em 0.05em 0;*/
+    border-width: 0.15em;
+    border: gray solid;
+    border-style: inset;
+    border-top-color: black;
+}
+.item-section article > *, .item-section section > * {
+    background-color: initial;
+}
+
+.item-section > .item-discount, .item-section section {
+    border-bottom-style: dashed;
+    border-top-style: solid;
+    border-width: 0.15em;
+}
+.item-section section {
+    border-style: dotted;
+}
+.amount-of-discount {
+    color: red;
+}
+.modpanel-section-additem * {
+    color: gray;
+}
+.modpanel-section-additem p {
+    color: black;
+}
+
+#listing-computers.design-triangle {
+    border-left-color: #5B8FB1;
+    border-top-color: #5B8FB1;
+}
+.item-section .breadcrumb:nth-child(2n+1) {
+    background-color: #938C8C;
+/*B6D5EA, volt 938C8C */
+}
+.item-section .breadcrumb:nth-child(2n) {
+    background-color: #86B3D1;
+}
+#listing-computers + .item-section > .breadcrumb {
+
+}
+#listing-components + .item-section > .breadcrumb {
+    background-color: rgb(255,161,77);
+}
+#listing-computers + .item-section {
+    
+}
+
+footer {
+    background-color: rgba(220, 220, 220, 0.5);
+
+    border-top: 0.5em #C5C1C0 dotted;
+}
+#opening_hours th {
+    background-color: #C5C1C0;
+}
+#opening_hours td {
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
+/* --------- Fonts & Text styling --------- */
+
+/* Site and form header */
+#site-title, #site-description, form fieldset legend { 
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+/* Header navigation */
+header a { 
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+/* Listing header */
+.item-section > article h3, .item-section > section h3 { 
+    font-family: "DejaVu Sans", sans-serif;
+}
+
+/* Item pricing boxes */
+.item-pricing { 
+    font-family: sans-serif;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-family: monospace;
+}
+.item-section .breadcrumb > * {
+    font-family: sans-serif;
+}
+.item-section .breadcrumb a {
+    text-decoration: none;
+}
+.item-section .breadcrumb h2 {
+    text-decoration: none;
+}
+
+/* Item's old price */
+.item-pricing > .old-price > dd {
+    text-decoration: line-through;
+}
+
+/* Admin panel style */
+.modpanel-section-additem * {
+    text-decoration: none;
+}

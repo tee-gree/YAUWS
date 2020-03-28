@@ -23,68 +23,111 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="theme_shared.css" type="text/css">
+    <link rel="stylesheet" href="site_structure.css" type="text/css">
+    <link rel="stylesheet" href="theme_units.css" type="text/css">
+    <link rel="stylesheet" href="theme_shopping-cart.css" type="text/css">
     <link rel="stylesheet" href="theme_listing.css" type="text/css">
     <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
-    <link rel="stylesheet" href="colors.css" type="text/css">
+    <link rel="stylesheet" href="theme_palette.css" type="text/css">
 </head>
 <body>
     <a id="top"></a>
     <header>
-        <a href="" id="site-logo">
+        <h3 class="preview-banner">Vigyázat! Előnézeti módban van!</h3>
+        <a href="index.html" id="site-logo">
             <!--<img src="graphics/site-profile.png">-->
             <img src="graphics/site-profile.svg">
         </a>
         <div id="site-main-header">
-            <a href="">
+            <a href="index.html">
                 <span id="site-title">MehInformatik</span>
             </a>
             <span id="site-description">Kapod, amit látsz</span>
         </div>
+        <div class="cart-summary mobile">
+            <h3 class="title">Kosár</h3>
+            <dl title="Kosár tartalma">
+                <dt>Termékek száma</dt>
+                <dd class="quantity">
+                    <span>0 <span class="unit">termék</span></span>
+                </dd>
+
+                <dt>Összeg</dt>
+                <dd class="sum">
+                    <span>0 <span class="unit">Ft-.</span></span>
+                </dd>
+            </dl>
+        </div>
         <nav>
             <ul>
                 <li>
-                    <a href="#listing-computers" id="link-computers">
+                    <a href="index.html#listing-computers" id="link-computers">
                         <span>Kész gépek</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#listing-components" id="link-components">
+                    <a href="index.html#listing-components" id="link-components">
                         <span>Részegységek</span>
                     </a>
 
                 </li>
                 <li>
-                    <a href="#listing-devices" id="link-devices">
+                    <a href="index.html#listing-devices" id="link-devices">
                         <span>Eszközök</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#listing-discounts" id="link-discounts">
+                    <a href="index.html#listing-discounts" id="link-discounts">
                         <span>Szezonális</span>
                     </a>
                 </li>
             </ul>
         </nav>
+        <p class="login-banner mobile has-session">
+            Belépve,&nbsp;mint
+            <a href="summary.html?view=profile" class="username">Altavista</a>!<br>
+            (<a href="summary.html?view=profile">Profil megtekintése</a>)
+        </p>
     </header>
     <main>
         <section id="side-panel">
-            <form action="login.php" method="post">
-                <fieldset>
-                    <legend>Belépés</legend>
-                    <label for="side-userlogin-id">Email</label><br>
-                    <input type="email" id="side-userlogin-id" name="userlogin-id" required><br>
-                    <label for="side-userlogin-password">Jelszó</label><br>
-                    <input type="password" id="side-userlogin-password" name="userlogin-password" required><br>
-                    <input type="submit" value="Küldés">
-                </fieldset>
-            </form>
+            <div class="cart-summary cart-empty">
+                <h3 class="title">Kosár</h3>
+                <dl title="Kosár tartalma">
+                    <dt>Termékek száma</dt>
+                    <dd class="quantity">
+                        <span>0 <span class="unit">termék</span></span>
+                    </dd>
+
+                    <dt>Összeg</dt>
+                    <dd class="sum">
+                        <span>0 <span class="unit">Ft-.</span></span>
+                    </dd>
+            </dl>
+            </div>
+            <p class="login-banner has-session">
+                Belépve,&nbsp;mint
+                <a href="summary.html?view=profile" class="username">Altavista</a>!<br>
+                (<a href="summary.html?view=profile">Profil megtekintése</a>)
+            </p>
+            <section id="site-news">
+                <h3 class="title">Hírek</h3>
+                <div id="twitter-news">Twitter-konténer</div>
+            </section>
         </section>
         <div id="main-content">
-            <!--<div class="breadcrumb" style="background-color: green;">LuftosLángos</div>-->
             <a id="listing-computers" class="design-triangle"></a>
             <section class="item-section">
-                <div class="breadcrumb"> &gt; <a href="#top">Főoldal</a> &gt; <a href="#listing-computers"><h2>Kész&nbsp;gépek</h2></a></div>
+                <div class="breadcrumb"> &gt;
+                    <a href="#top">Főoldal</a> &gt;
+                    <a href="#listing-computers"><h2>Kész&nbsp;gépek</h2></a>
+                    <span class="modbox"><!--Disallows line-wrapping between the links-->
+                        <a href="edit.html?view=prod_manage&formid=1"
+                            >&lt;-&nbsp;Vissza</a><a href="summary.html?view=prod_manage&formid=1"
+                            >Összesítés&nbsp;-&gt;
+                            </a>
+                    </span>
+                </div>
                 <article class="item-discount">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
                     <img src="graphics/8857336938526.webp">
@@ -140,7 +183,7 @@
                 <article class="item-shortage">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
                     <img src="graphics/8857336938526.webp">
-                    <div class="no_description">Jelenleg nem érhető el leírás</div>
+                    <p class="no_description">Jelenleg nem érhető el leírás</p>
                     <dl class="item-pricing">
                         <div class="old-price">
                             <dt>Régi ár</dt>
@@ -163,7 +206,7 @@
                 <article class="item-shortage">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
                     <img src="graphics/8857336938526.webp">
-                    <div class="no_description">Jelenleg nem érhető el leírás</div>
+                    <p class="no_description">Jelenleg nem érhető el leírás</p>
                     <dl class="item-pricing">
                         <div class="old-price">
                             <dt>Régi ár</dt>
@@ -186,7 +229,7 @@
                 <article class="item-shortage">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
                     <img src="graphics/8857336938526.webp">
-                    <div class="no_description">Jelenleg nem érhető el leírás</div>
+                    <p class="no_description">Jelenleg nem érhető el leírás</p>
                     <dl class="item-pricing">
                         <div class="old-price">
                             <dt>Régi ár</dt>
@@ -207,8 +250,8 @@
                     </dl>
                 </article>
                 <section class="modpanel-section-additem">
-                    <a href="">
-                        <span><p>Új</p> hozzáadása</span>
+                    <a href="administer.php">
+                        <span><p>Új</p> hozzáadása<br></span>/Meglévő módosítása
                     </a>
                 </section>
 
@@ -237,10 +280,13 @@
             </tr>
         </table>
         <p>
-            Vállalkozásunk kis- és középvállalatok, illetve magánszemélyek számára áll rendelkezésre számítástechnikai eszközök internetes eladásával.
+            Vállalkozásunk számítástechnikai eszközök értékesítésével foglalkozik, elsődlegesen Magyarországon belül, postai úton.
         </p>
         <p>
-            Átvétel: A személyes átvételt preferálók pesti telephelyünkön, egyébként Foxpost-, illetve MPL csomagautomatával és futárral oldható meg.
+            Átvétel: Személyesen pesti telephelyünkön, egyébként Foxpost- és MPL-csomagautomatán, illetve futáron keresztül vehetik át rendelésüket.
+        </p>
+        <p id="footer-data">
+            &copy; 2020. NetenVeszem Kft.; <a href="https://twitter.com">Twitter&nbsp;oldalunk</a>
         </p>
         <!--
         <p>

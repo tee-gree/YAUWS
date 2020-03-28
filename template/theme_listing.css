@@ -1,4 +1,6 @@
-/* Designing listings */
+/*
+Designing listings
+*/
 #main-content > .design-triangle {
     /* fallback colors */
     border-color: grey transparent transparent grey;
@@ -14,16 +16,9 @@
 }
 
 /* Breadcrumb */
-.item-section .breadcrumb > * {
-    font-family: sans-serif;
-}
-.item-section .breadcrumb a {
-    text-decoration: none;
-}
 .item-section .breadcrumb h2 {
     display: inline-block;
     font-size: inherit;
-    text-decoration: none;
     margin: inherit;
 
     font-size: 1.4em;
@@ -47,16 +42,18 @@
 .item-section > article *, .item-section > section * {
     max-width: 100%;
 }
+/*
 .item-section > article *, .item-section > section * {
-    /* Used for visibility concerns */
+    / * Used for visibility concerns * /
     background-color: inherit;
 }
+*/
 
     /* Introducing flexbox organizer */
 .item-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .item-section .breadcrumb {
     flex: 0 0 100%;
@@ -65,9 +62,8 @@
     /* Title & Description style */
 .item-section > article h3, .item-section > section h3 {
     margin: 0.05em 0.1em 0;
-    font-family: "DejaVu Sans", sans-serif;
 }
-.item-section > article > img, .item-section > section > img {
+.item-section > article img, .item-section > section img {
     display: block;
     width: 10em;
     margin: 0.75em auto;
@@ -104,7 +100,6 @@
 .item-pricing {
     margin: 0;
 
-    font-family: sans-serif;
     background-color: inherit;
 }
 .item-pricing > * {
@@ -138,8 +133,8 @@
 .item-pricing > .old-price, .item-pricing > .amount-of-discount {
     display: none;
 }
-.item-discount > .item-pricing > .old-price,
- .item-discount > .item-pricing > .amount-of-discount {
+.item-discount .item-pricing > .old-price,
+ .item-discount .item-pricing > .amount-of-discount {
     display: block;
 }
 /*
@@ -157,9 +152,6 @@
 }
 .item-pricing > .amount-of-discount:after {
     content: ')';
-}
-.item-pricing > .old-price > dd {
-    text-decoration: line-through;
 }
 .item-shortage .quantity > dd {
     content: 'Nem elérhető';

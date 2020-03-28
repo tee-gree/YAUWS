@@ -1,0 +1,69 @@
+Eme útmutató a mellékelt weboldal jobb megértésére szolgál, ugyanakkor
+ a legjobb útmutató maga a kód, így - elsősorban - arra érdemes támaszkodni.
+Főbb elemei:
+ - <header>: Magába foglalja a teljes felső képernyő-darabkát, így
+    a logót, az oldal címét és mottóját,
+    a mobil-nézet kosarát: .cart-summary.mobile,
+    a navigációs sávot: header > nav,
+    és a mobil-nézet profil-ablakát: .login-banner.mobile
+
+ - #side-panel: Az oldal "oldalágát" adja. A profilkezelés nagyja itt történik,
+    illetve az asztali nézet kosarát és a híreket is itt találjuk meg.
+
+ - #main-content: A fő tartalmat adja, mely oldalanként különbözik.
+
+ - <footer>: Némi információt közöl a weblapról és a webshop-ról.
+
+Az oldal jellegzetességei:
+ - .breadcrumb: Az oldalon található tartalom helyét mutatja (path).
+    Az oldal görgítésekor is látható marad, amíg csak a szülő objektum engedi. Listázásnál használjuk.
+
+ - Flexbox: A felső navigációs sávhoz használt konténer, ami a tartalmakat
+    egymástól egyenletes térközzel választja el.
+
+ - .cart-summary: A kosarak összesítő osztálya.
+    További osztályai is lehetnek:
+        .mobile -> kisképernyős eszközökre szánt verzió
+        .cart-empty -> üres a kosár
+
+ - .login-banner: Beléptetésre és navigációra használatos.
+    További osztályai:
+        .mobile -> kisképernyős eszközökre szánt verzió
+        .has-session -> a felhasználó be van lépve
+
+ - Twitter-oldal/-konténer: a híreket nem közvetlenül a weboldalon keresztül
+    publikáljuk, hanem egy külső tartalomszolgáltatón keresztül,
+    amivel a felhasználókat nagyobb arányban érhetjük el.
+
+ - show.html: A ?view=* argumentummal szabályozzuk, éppen milyen feladatot
+    szeretnénk elvégezni, illetve módosítást indíthatunk.
+     -> view=profile : profiladatok megtekintése
+     -> view=prod_manage : termékkészlet ellenőrzése
+     -> view=user_manage : felhasználói lista lekérdezése, adatok...
+     -> view=order : rendeléseket, azok állatotát mutatja meg
+            -> pending, active, transferring, success, inactive
+     -> view=system : egyéb rendszeradatok lekérdezése
+
+ - edit.html: A ?view=* argumentummal szabályozzuk, éppen milyen feladatot
+    szeretnénk elvégezni.
+     -> view=profile : profiladatok módosítása
+     -> view=prod_manage : termékkészlet módosítása
+     -> view=user_manage : jogosultságok, adatok módosítása
+     -> view=order : megrendelés(ek) módosítása
+
+ - preview.html: Vizuálisan ellenőrizzük, rendben van-e a felvitt tartalom.
+
+ - summary.html: A ?view=* argumentummal szabályozzuk, éppen milyen feladatot
+    szeretnénk elvégezni.
+     -> view=profile : profiladatok megtekintése
+     -> view=prod_manage : termékkészlet ellenőrzése, adatok bevitele
+     -> view=order : rendelés ellenőrzése
+
+Fontos: létre kell hoznunk bizonyos hibaoldalakat,
+    illetve egyes SEO-metaadatokat is
+Belépéskor: melyik kosarat vigyük tovább? Kérdezzük meg a felhasználót!
+Ügyelnünk kell arra, hogy a .mobile verzióval is rendelkező egységek
+    adatait szinkronban tartsuk a teljes oldalon!
+
+link?formid=1
+SVG format, details/summary + további hack-ek?

@@ -1,6 +1,35 @@
+.preview-banner {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2em;
+
+    font-size: 3em;
+    text-align: center;
+}
+
+.breadcrumb .modbox {
+    float: right;
+    margin-top: 0.1em;
+}
+.modbox > * {
+    border: 0.1em black solid;
+    border-radius: 0.3em;
+    padding: 0.1em;
+    margin: 0 0.3em;
+    background-color: yellow;
+}
+/*
+.modbox > *:disabled {
+    background-color: gray;
+}*/
+
 .item-section > .modpanel-section-additem {
     padding: 0;
     /*height: 25.6em;*/
+    text-align: center;
 }
 .modpanel-section-additem > a {
     padding: 0;
@@ -15,9 +44,6 @@
     margin: 0;
 }
 
-.modpanel-section-additem * {
-    text-decoration: none;
-}
 .modpanel-section-additem p::after {
     content: '+';
     font-size: 200%;
@@ -27,7 +53,6 @@
 }
 .modpanel-section-additem p, .modpanel-section-additem span {
     display: block;
-    text-align: center;
     margin: 0;
     font-size: 175%;
 }

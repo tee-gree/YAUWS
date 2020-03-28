@@ -1,4 +1,10 @@
-/* General / structure */
+/*
+Basic structure
+ - Site header (ex. cart-summary)
+ - #main-content, #side-panel
+ - Footer
+ - Simplified mobile-view
+*/
 body {
     width: 70em;
     max-width: 100%;
@@ -17,52 +23,8 @@ main {
     width: 20%;
     margin-left: 0.5em;
 }
-.breadcrumb {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
 
-    font-family: monospace;
-    font-size: 1.1em;
-}
-form {
-    margin: 0.5em 0;
-
-    padding-top: 0.8em;
-}
-form fieldset {
-    max-width: 50%;
-    display: block;
-    margin: auto;
-    text-align: right;
-    padding-right: 1.5em;
-
-    border-width: 0;
-    border-top-width: initial;
-}
-form fieldset legend {
-    margin-top: -0.8em;
-}
-form fieldset input {
-    margin: 0.2em 0;
-}
-footer {
-    padding-left: 15%;
-    padding-bottom: 5%;
-    margin-right: 2em;
-    max-width: 1000px;
-    float: right;
-    font-size: 0.9em;
-
-    background-image: url("graphics/footer-profile.png");
-    background-size: 14%;
-    background-position: 2% 2em;
-    background-repeat: no-repeat;
-}
-
-
-/* Site-heading */
-    /* Logo, title */
+/* --------- Site-heading --------- */
 header > * {
     display: inline-block;
     margin: 0.5em 0.5em 0 0;
@@ -86,7 +48,7 @@ header > * {
     border-bottom: 0.1em black solid;
 }
 
-    /* Navigation */
+/* --------- Navigation --------- */
 header > nav {
     display: block;
 
@@ -124,8 +86,6 @@ header > nav ul li a {
     padding: 0.5em 0 0 2em;
 
     font-size: 1.3em;
-    text-decoration: none;
-    font-family: sans-serif;
 }
 #link-computers {
     background-position-x: 1em;
@@ -158,11 +118,27 @@ header > nav ul li a {
 header > nav ul li span {
     padding: 0 0.5em;
 }
-
-/* More precise selections */
-#site-title, #site-description, form fieldset legend {
-    font-family: Impact, Charcoal, sans-serif;
+.login-banner.mobile {
+    display: none;
 }
+.login-banner, #site-news .title {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+
+    padding: 0.5em 0;
+}
+#side-panel .login-banner.has-session {
+    font-size: 1em;
+}
+#side-panel .login-banner .username {
+    font-size: 1.5em;
+}
+.login-banner a {
+    text-decoration: underline;
+}
+
+/* ---------  --------- */
 #side-panel form fieldset {
     text-align: initial;
     padding-right: 5%;
@@ -176,11 +152,34 @@ header > nav ul li span {
 #side-panel form fieldset input[type="submit"] {
     width: 80%;
 }
+#site-news .title {
+    margin: 1em 0 0.5em 0;
+    padding: 0.1em;
+}
+#twitter-news {
+    height: 25em;
+    border-left: 1px black solid;
+}
+
+/* ---------  --------- */
 #main-content > :first-child {
     padding-top: 1.5em;
 }
-#side-panel > :first-child {
-    padding-top: 1em;
+
+/* ---------  --------- */
+footer {
+    padding-left: 15%;
+    padding-bottom: 5%;
+    margin-top: 1.2em;
+    margin-right: 2em;
+    max-width: 1000px;
+    float: right;
+    font-size: 0.9em;
+
+    background-image: url("graphics/footer-profile.png");
+    background-size: 14%;
+    background-position: 2% 2em;
+    background-repeat: no-repeat;
 }
 #opening_hours {
     float: left;
@@ -190,7 +189,11 @@ header > nav ul li span {
     margin: 1em;
     font-size: initial;
 }
+#footer-data {
+    font-size: 1.25em;
+}
 
+/* --------- Responsive design --------- */
 @media (max-width: 800px) {
     #side-panel {
         display: none;
@@ -202,6 +205,9 @@ header > nav ul li span {
     #site-logo, #site-logo > img {
         width: 5em;
     }
+    header > nav {
+        margin-top: 0.5em;
+    }
     header > nav ul li {
         min-width: initial;
         font-size: 1.5em;
@@ -209,6 +215,11 @@ header > nav ul li span {
     }
     header > nav ul li a span {
         display: none;
+    }
+    .login-banner.mobile {
+        display: block;
+
+        margin: -0.2em 0 0 0;
     }
     footer {
         text-align: justify;

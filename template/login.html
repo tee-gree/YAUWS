@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <!--
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="site_structure.css" type="text/css">
+    <link rel="stylesheet" href="theme_units.css" type="text/css">
+    <link rel="stylesheet" href="theme_shopping-cart.css" type="text/css">
+    <link rel="stylesheet" href="theme_listing.css" type="text/css">
+    <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
+    <link rel="stylesheet" href="theme_palette.css" type="text/css">
+    <style rel="stylesheet">
+        #side-panel {
+            display: none;
+        }
+        #main-content {
+            margin-right: 0;
+        }
+        #main-content > * {
+            border-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+    <header>
+        <a href="index.html" id="site-logo">
+            <!--<img src="graphics/site-profile.png">-->
+            <img src="graphics/site-profile.svg">
+        </a>
+        <div id="site-main-header">
+            <a href="index.html">
+                <span id="site-title">MehInformatik</span>
+            </a>
+            <span id="site-description">Kapod, amit látsz</span>
+        </div>
+        <div class="cart-summary mobile">
+            <h3 class="title">Kosár</h3>
+            <dl title="Kosár tartalma">
+                <dt>Termékek száma</dt>
+                <dd class="quantity">
+                    <span>0 <span class="unit">termék</span></span>
+                </dd>
+
+                <dt>Összeg</dt>
+                <dd class="sum">
+                    <span>0 <span class="unit">Ft-.</span></span>
+                </dd>
+            </dl>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html#listing-computers" id="link-computers">
+                        <span>Kész gépek</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#listing-components" id="link-components">
+                        <span>Részegységek</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="index.html#listing-devices" id="link-devices">
+                        <span>Eszközök</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#listing-discounts" id="link-discounts">
+                        <span>Szezonális</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+	<a href="login.html" class="login-banner mobile">Belépés/Regisztráció</a>
+    </header>
+    <main>
+        <section id="side-panel">
+            <div class="cart-summary cart-empty">
+                <h3 class="title">Kosár</h3>
+                <dl title="Kosár tartalma">
+                    <dt>Termékek száma</dt>
+                    <dd class="quantity">
+                        <span>0 <span class="unit">termék</span></span>
+                    </dd>
+
+                    <dt>Összeg</dt>
+                    <dd class="sum">
+                        <span>0 <span class="unit">Ft-.</span></span>
+                    </dd>
+            </dl>
+            </div>
+            <a href="login.html" class="login-banner">Regisztráció</a>
+            <form action="login.php" method="post">
+                <fieldset>
+                    <legend>Belépés</legend>
+                    <label for="side-userlogin-id">Email</label><br>
+                    <input type="email" id="side-userlogin-id" name="userlogin-id" required><br>
+                    <label for="side-userlogin-password">Jelszó</label><br>
+                    <input type="password" id="side-userlogin-password" name="userlogin-password" required><br>
+                    <input type="submit" value="Küldés">
+                </fieldset>
+            </form>
+            <section id="site-news">
+                <h3 class="title">Hírek</h3>
+                <div id="twitter-news">Twitter-konténer</div>
+            </section>
+        </section>
+        <div id="main-content">
+            <form action="login.php" method="post">
+                <fieldset>
+                    <legend>Belépés</legend>
+                    <label for="side-userlogin-id">Email:</label>
+                    <input type="email" id="side-userlogin-id" name="userlogin-id" required><br>
+                    <label for="side-userlogin-password">Jelszó:</label>
+                    <input type="password" id="side-userlogin-password" name="userlogin-password" required><br>
+                    <input type="submit" value="Küldés">
+                </fieldset>
+            </form>
+            <form action="register.php" method="post" id="reg-form">
+                <fieldset>
+                    <legend>Új Fiók Létrehozása</legend>
+                    <label for="userreg-name">Teljes neve:</label>
+                    <input id="userreg-name" name="reg-name" required>
+                    <br>
+                    <label for="userreg-email">E-mail címe:</label>
+                    <input type="email" id="userreg-email" name="reg-email" required>
+                    <br>
+                    <label for="userreg-email2">E-mail ismét:</label>
+                    <input type="email" id="userreg-email2" name="reg-email2" required>
+                    <br>
+                    <input type="submit" value="Küldés">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <table id="opening_hours">
+            <caption>Nyitvatartási rend</caption>
+            <tr>
+                <th>Nap</th>
+                <th>Nyitva</th>
+            </tr>
+            <tr>
+                <td>Hétfő-Péntek</td>
+                <td>8-16 óra</td>
+            </tr>
+            <tr>
+                <td>Szombat</td>
+                <td>8-14 óra</td>
+            </tr>
+            <tr>
+                <td>Vasárnap</td>
+                <td>--</td>
+            </tr>
+        </table>
+        <p>
+            Vállalkozásunk számítástechnikai eszközök értékesítésével foglalkozik, elsődlegesen Magyarországon belül, postai úton.
+        </p>
+        <p>
+            Átvétel: Személyesen pesti telephelyünkön, egyébként Foxpost- és MPL-csomagautomatán, illetve futáron keresztül vehetik át rendelésüket.
+        </p>
+        <p id="footer-data">
+            &copy; 2020. NetenVeszem Kft.; <a href="https://twitter.com">Twitter&nbsp;oldalunk</a>
+        </p>
+        <!--
+        <p>
+            További információk: Adatkezelési információk, Szállítási információk
+        </p>
+        -->
+    </footer>
+</body>
+</html>

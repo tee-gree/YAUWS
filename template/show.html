@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="site_structure.css" type="text/css">
+    <link rel="stylesheet" href="theme_palette.css" type="text/css">
+    <link rel="stylesheet" href="theme_units.css" type="text/css">
+    <link rel="stylesheet" href="theme_shopping-cart.css" type="text/css">
+    <link rel="stylesheet" href="theme_listing.css" type="text/css">
+    <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
+</head>
+<body>
+    <a id="top"></a>
+    <header>
+        <a href="index.html" id="site-logo">
+            <!--<img src="graphics/site-profile.png">-->
+            <img src="graphics/site-profile.svg">
+        </a>
+        <div id="site-main-header">
+            <a href="index.html">
+                <span id="site-title">MehInformatik</span>
+            </a>
+            <span id="site-description">Kapod, amit látsz</span>
+        </div>
+        <div class="cart-summary mobile">
+            <a href="summary.html?view=cart">
+                <h3 class="title">Kosár</h3>
+                <dl title="Kosár tartalma">
+                    <dt>Termékek száma</dt>
+                    <dd class="quantity">
+                        <span>0 <span class="unit">termék</span></span>
+                    </dd>
+
+                    <dt>Összeg</dt>
+                    <dd class="sum">
+                        <span>0 <span class="unit">Ft-.</span></span>
+                    </dd>
+                </dl>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html#listing-computers" id="link-computers">
+                        <span>Kész gépek</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#listing-components" id="link-components">
+                        <span>Részegységek</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="index.html#listing-devices" id="link-devices">
+                        <span>Eszközök</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#listing-discounts" id="link-discounts">
+                        <span>Szezonális</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="login-banner mobile has-session">
+            Belépve,&nbsp;mint
+            <a href="show.html?view=profile" class="username">Altavista</a>!<br>
+            (<a href="show.html?view=profile">Profil megtekintése</a>)
+        </p>
+    </header>
+    <main>
+        <section id="side-panel">
+            <div class="cart-summary cart-empty">
+                <a href="summary.html?view=cart">
+                    <h3 class="title">Kosár</h3>
+                    <dl title="Kosár tartalma">
+                        <dt>Termékek száma</dt>
+                        <dd class="quantity">
+                            <span>0 <span class="unit">termék</span></span>
+                        </dd>
+
+                        <dt>Összeg</dt>
+                        <dd class="sum">
+                            <span>0 <span class="unit">Ft-.</span></span>
+                        </dd>
+                    </dl>
+                </a>
+            </div>
+            <p class="login-banner has-session">
+                Belépve,&nbsp;mint
+                <a href="show.html?view=profile" class="username">Altavista</a>!<br>
+                (<a href="show.html?view=profile">Profil megtekintése</a>)
+            </p>
+            <section id="site-news">
+                <h3 class="title">Hírek</h3>
+                <div id="twitter-news">Twitter-konténer</div>
+            </section>
+        </section>
+        <div id="main-content">
+            <section class="aggregate profile-view">
+            <h2>view=profile</h2>
+                <table class="aggregate">
+                    <caption class="top">Belépési adatok</caption>
+                    <tr>
+                        <th scope="row">Teljes név</th>
+                        <td>John Smith</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">E-mail cím</th>
+                        <td>pcmasterrace@example.com</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Jelszó</th>
+                        <td><a href="edit.html?view=profile">&lt;Jelszó megváltoztatása&gt;</a></td>
+                    </tr>
+                </table>
+                <table class="aggregate">
+                    <caption class="top">Jogosultság</caption>
+                    <tr>
+                        <th scope="row">Státusz</th>
+                        <td>Készlet-felügyelő</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Raktárkezelés</th>
+                        <td><a href="show.html?view=prod_manage">&lt;Készletrendező&gt;</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Rendelések</th>
+                        <td><a href="show.html?view=orders">&lt;Rendelés-nyilvántartó&gt;</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Felhasználók</th>
+                        <td><a href="show.html?view=user_manage">&lt;Adminisztráció&gt;</a></td>
+                    </tr>
+                </table>
+                <form class="binary-checking" method="post" action="edit.php?manage=billing-address-prof">
+                    <fieldset>
+                        <legend>Cím-adatbázis</legend>
+                        <input type="radio" id="billing_address_prof_1"
+                             name="billing_address_prof" value="1">
+                        <label for="billing_address_prof_1">
+                            1. John Smith, 2508, Árvíztűrő Tükörfúrógép
+                        </label><br>
+                        <input type="radio" id="billing_address_prof_2"
+                             name="billing_address_prof" value="2" checked>
+                        <label for="billing_address_prof_2">
+                            2. Tony Amato, 958, The quick brown fox jumps over the lazy dog
+                        </label><br>
+
+                        <table class="aggregate">
+                            <caption class="top">Aktív számlázási cím</caption>
+                            <tr>
+                                <th scope="row">Név</th>
+                                <td>John Smith</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Lakcím</th>
+                                <td>
+                                    Mozilla<br>
+                                    331 E. Evelyn Avenue<br>
+                                    Mountain View, CA<br>
+                                    94041<br>
+                                    USA<br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">E-mail</th>
+                                <td>pcmasterrace@example.com</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Telefonszám</th>
+                                <td>844-555-0172</td>
+                            </tr>
+                        </table>
+
+                        <input type="checkbox" id="is_delivery_same"
+                             name="is_delivery_same" value="checked" checked>
+                        <label for="is_delivery_same">
+                            A szállítási cím megegyezik a számlázási címmel.
+                        </label><br>
+                        <p class="warning-banner">
+                            Adatmódosítás történt.<br>
+                            Küldje el az űrlapot, mielőtt továbblépne!
+                        </p>
+                        <input type="submit" value="Küldés">
+                    </fieldset>
+                </form>
+            </section>
+            <section class="aggregate profile-view">
+            <h2>view=prod_manage</h2>
+                <div class="knobs">
+                    <a href="">Idő szerint</a>
+                </div>
+                <div class="knobs"><a
+                    href="show.html?view=prod_manage&sort_order=asc">Növekvő</a><a
+                    href="" class="active">Csökkenő</a>
+                </div>
+                <div class="knobs"><a
+                    href="edit.html?view=prod_manage&product_id=new">Új hozzáadása</a>
+                </div>
+                <table class="aggregate">
+                    <caption class="bottom">Árukészlet</caption>
+                    <tr>
+                        <th scope="col">Termék neve</th>
+                        <th scope="col">Mennyiség</th>
+                        <th scope="col"></th>
+                    </tr>
+                    <tr>
+                        <td>RUSSELL-HOBBS 18036-56 Kenyérsütő</td>
+                        <td>3</td>
+                        <td><a href="">
+                            <img src="graphics/351525.png" width="25px" alt="Szerkesztés">
+                        </a></td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <table id="opening_hours">
+            <caption class="top">Nyitvatartási rend</caption>
+            <tr>
+                <th>Nap</th>
+                <th>Nyitva</th>
+            </tr>
+            <tr>
+                <td>Hétfő-Péntek</td>
+                <td>8-16 óra</td>
+            </tr>
+            <tr>
+                <td>Szombat</td>
+                <td>8-14 óra</td>
+            </tr>
+            <tr>
+                <td>Vasárnap</td>
+                <td>--</td>
+            </tr>
+        </table>
+        <p>
+            Vállalkozásunk számítástechnikai eszközök értékesítésével foglalkozik, elsődlegesen Magyarországon belül, postai úton.
+        </p>
+        <p>
+            Átvétel: Személyesen pesti telephelyünkön, egyébként Foxpost- és MPL-csomagautomatán, illetve futáron keresztül vehetik át rendelésüket.
+        </p>
+        <p id="footer-data">
+            &copy; 2020. NetenVeszem Kft.; <a href="https://twitter.com">Twitter&nbsp;oldalunk</a>
+        </p>
+        <!--
+        <p>
+            További információk: Adatkezelési információk, Szállítási információk
+        </p>
+        -->
+    </footer>
+</body>
+</html>

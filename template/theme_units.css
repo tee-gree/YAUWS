@@ -1,11 +1,11 @@
 /*
  - Breadcrumb
  - Certain Banners
- - Caption positioning using HTML (.top / .bottom)
- - Aggregate(d data)
+ - Product-block
  - Form
  - "Binary-checked" form
  - Table
+ - Caption positioning using HTML (.top / .bottom)
  - Listing-knobs
 */
 .breadcrumb {
@@ -15,28 +15,83 @@
 
     font-size: 1.1em;
 }
-.warning-banner {
+.banner, .warning-banner {
     display: block;
     text-align: center;
 }
-table caption.top {
-    caption-side: top;
-}
-table caption.bottom {
-    caption-side: bottom;
-}
 
-.aggregate {
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 50%;
-
-    margin-top: 1em;
+/* Product-block */
+    /* Description */
+.product-block > .description, .product-block > .no-description {
+    padding: 0;
+    margin: 0;
 }
-.aggregate th, .aggregate td {
+.product-block > .description > div {
+    margin: 0.2em 0;
+}
+.product-block > .description dt {
+    display: inline-block;
+    max-width: 70%;
+}
+.product-block > .description dd {
+    margin: 0 0 0 -50%;
+    float: right;
+}
+.product-block > .description dt::after {
+    content: ':';
+}
+.product-block > .no_description {
     text-align: center;
-    vertical-align: middle;
-    line-height: 1.5em;
+}
+
+    /* Pricing style */
+.product-block > .item-pricing {
+    margin: 0;
+}
+.product-block > .item-pricing > * {
+    display: block;
+    text-align: center;
+}
+.product-block > .item-pricing > * > * {
+    display: inline-block;
+    margin: 0;
+}
+.product-block > .item-pricing > * > dt {
+    display: none;
+}
+.product-block > .item-pricing > .last-price {
+    font-size: 1.5em;
+}
+
+/* Start w/ hidden discount.. */
+.product-block > .item-pricing > .old-price,
+ .product-block > .item-pricing > .amount-of-discount {
+    display: none;
+}
+/* ..then show it if neccessary */
+.item-discount.product-block > .item-pricing > .old-price,
+ .item-discount.product-block > .item-pricing > .amount-of-discount {
+    display: block;
+}
+
+.product-block > .item-pricing > .amount-of-discount {
+    margin: 0.3em 0;
+}
+.product-block > .item-pricing > .amount-of-discount:before {
+    content: '(';
+}
+.product-block > .item-pricing > .amount-of-discount:after {
+    content: ')';
+}
+.item-shortage.product-block > .item-pricing > .quantity > dd {
+    content: 'Nem elérhető';
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+
+    background-image: url("graphics/notavail.png");
+    background-position: left;
+    background-repeat: no-repeat;
 }
 
 form {
@@ -89,13 +144,29 @@ form.binary-checking
 table td, table th {
     padding: 0.1em 1em;
 }
+table td input {
+    display: block;
+}
+table caption.top {
+    caption-side: top;
+}
+table caption.bottom {
+    caption-side: bottom;
+}
+table p {
+    margin: 0;
+}
 
+.knobs.right {
+    float: right;
+}
 .knobs {
     display: inline-block;
 
     border: 0.1em black solid;
     border-radius: 0.2em;
     padding: 0 0.15em;
+    margin: 0.2em;
 }
 .knobs > * {
     display: inline-block;

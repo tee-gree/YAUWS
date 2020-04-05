@@ -52,18 +52,17 @@ Az oldal jellegzetességei:
  - show.html: A ?view=* argumentummal szabályozzuk, éppen milyen feladatot
     szeretnénk elvégezni, illetve módosítást indíthatunk.
      -> view=profile : profiladatok megtekintése
-     -> view=prod_manage : termékkészlet ellenőrzése
-     -> view=user_manage : felhasználói lista lekérdezése, adatok...
-     -> view=orders : rendeléseket, azok állatotát mutatja meg
+     -> view=product_list : termékkészlet ellenőrzése
+     -> view=profile_list : felhasználók listázása
+     -> view=order_list : rendeléseket, azok állatotát mutatja meg
             -> pending, active, transferring, success, inactive
      -> view=system : egyéb rendszeradatok lekérdezése
 
  - edit.html: A ?view=* argumentummal szabályozzuk, éppen milyen feladatot
-    szeretnénk elvégezni.
-     -> view=profile : profiladatok módosítása
-     -> view=prod_manage : termékkészlet módosítása
-     -> view=user_manage : jogosultságok, adatok módosítása
-     -> view=orders : megrendelés(ek) módosítása
+    szeretnénk elvégezni, egy további id=* paraméterrel. Administrátorok számára.
+     -> view=profile : jogosultságok, profiladatok módosítása
+     -> view=product : termék/készlet módosítása
+     -> view=order : megrendelés(ek) módosítása
 
  - preview.html: Vizuálisan ellenőrizzük, rendben van-e a felvitt tartalom.
 

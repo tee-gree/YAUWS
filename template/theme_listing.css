@@ -39,15 +39,9 @@ Designing listings
     vertical-align: top;
     min-height: 25em;
 }
-.item-section > article *, .item-section > section * {
+.item-section > article *, .item-section > section * { /**/
     max-width: 100%;
 }
-/*
-.item-section > article *, .item-section > section * {
-    / * Used for visibility concerns * /
-    background-color: inherit;
-}
-*/
 
     /* Introducing flexbox organizer */
 .item-section {
@@ -69,56 +63,19 @@ Designing listings
     margin: 0.75em auto;
 }
 
-    /* Description */
-.description, .no_description {
-    padding: 0;
-    margin: 0;
-    /*height: 3.6em;*/
-}
-.description > div {
-    margin: 0.2em 0;
-}
-.description dt {
-    display: inline-block;
-    max-width: 70%;
-}
-.description dd {
-    margin: 0 0 0 -50%;
-    float: right;
-}
-.description dt::after {
-    content: ':';
-}
-.description :nth-child(n+4) {
-    display: none;
-}
-.no_description {
-    text-align: center;
-}
-
-    /* Pricing style */
-.item-pricing {
-    margin: 0;
-
-    background-color: inherit;
-}
-.item-pricing > * {
-    display: block;
-    text-align: center;
-}
-.item-pricing > * > * {
-    display: inline-block;
-    margin: 0;
-}
-.item-pricing > * > dt {
-    display: none;
-}
-.item-pricing > .last-price {
-    font-size: 1.5em;
-}
 
 /* Other remarks */
-.item-section > .item-discount {
+.item-section > .product-block > .knobs {
+    text-align: center;
+    display: block;
+}
+.item-section > .product-block > .knobs > * {
+    display: block;
+}
+.item-section > .product-block > .description :nth-child(n+4) {
+    display: none;
+}
+.item-section > .product-block.item-discount {
     background-image: url("graphics/discount-mark.png");
     background-position: top -0.15em right 0.2em;
     background-repeat: no-repeat;
@@ -126,40 +83,7 @@ Designing listings
     /* proper background-size: 20px 36px;*/
     background-size: 1.2em 2.16em;
 }
-.item-section > .item-discount h3 {
+.item-section > .product-block.item-discount h3 {
     margin-right: 0.95em; /*(0.2+1.2-0.25)em*/
 }
-/* Start w/ hidden discount */
-.item-pricing > .old-price, .item-pricing > .amount-of-discount {
-    display: none;
-}
-.item-discount .item-pricing > .old-price,
- .item-discount .item-pricing > .amount-of-discount {
-    display: block;
-}
-/*
-.item-discount > .item-last-price {
-    border-image: url("graphics/discount-strip-line.png");
-    border-width: 0;
-    border-bottom: 1em;
-}
-*/
-.item-pricing > .amount-of-discount {
-    margin: 0.3em 0;
-}
-.item-pricing > .amount-of-discount:before {
-    content: '(';
-}
-.item-pricing > .amount-of-discount:after {
-    content: ')';
-}
-.item-shortage .quantity > dd {
-    content: 'Nem elérhető';
-    display: block;
-    text-align: center;
-    font-size: 1.5em;
 
-    background-image: url("graphics/notavail.png");
-    background-position: left;
-    background-repeat: no-repeat;
-}

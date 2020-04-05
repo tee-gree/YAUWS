@@ -160,10 +160,50 @@ header > nav ul li span {
     height: 25em;
     border-left: 1px black solid;
 }
+#gpdr-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 0.2em;
+
+    font-size: 1.2em;
+}
+#gpdr-info p {
+    display: inline;
+    margin: 0;
+}
+.knobs.accept-gdpr {
+    display: inline-block;
+    float: right;
+}
 
 /* ---------  --------- */
 #main-content > :first-child {
     padding-top: 1.5em;
+}
+#main-content > section.data-view {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 800px;
+    max-width: 95%;
+    min-width: 80%;
+}
+#main-content > section.data-view table {
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 1em;
+}
+
+#main-content > section.data-view table th,
+ #main-content > section.data-view table td {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5em;
 }
 
 /* ---------  --------- */
@@ -226,4 +266,14 @@ footer {
         padding-left: 0;
         background-image: none;
     }
+    #
+    #main-content > section.data-view {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        width: 100%;
+        max-width: initial;
+    }
 }
+

@@ -10,6 +10,9 @@ header a, .cart-summary a, .item-section a, .breadcrumb a, .knobs a {
 .knobs a {
     color: rgb(42,40,48);
 }
+.knobs * {
+    outline-width: thick;
+}
 .profile-view a, .profile-view a:visited, .profile-view a:focus, .profile-view a:active {
     color: blue;
 }
@@ -20,6 +23,10 @@ header a, .cart-summary a, .item-section a, .breadcrumb a, .knobs a {
     font-size: 1.1em;
     font-weight: bold;
 }
+#gpdr-info {
+    background-color: #C5C1C0;
+}
+
 table caption.top {
     border-bottom: 0.2em #C5C1C0 solid;
 }
@@ -55,7 +62,7 @@ header > nav, #main-content > *, #side-panel, footer {
 
     font-weight: bold;
 }
-.knobs > .active {
+.knobs > .active, .knobs > .highlight {
     background: rgb(162,160,168);
     /*background: linear-gradient(0deg, rgba(62,60,68,0.49754901960784315) 0%, rgba(171,171,186,0.5) 27%, rgba(114,128,131,0.5) 100%);*/
     background: linear-gradient(0deg, rgb(92,90,98) 0%, rgb(201,201,216) 27%, rgb(144,158,161) 100%);

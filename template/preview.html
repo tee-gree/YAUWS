@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="theme_shopping-cart.css" type="text/css">
     <link rel="stylesheet" href="theme_listing.css" type="text/css">
     <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
+
+    <link rel="stylesheet" href="some_other_ugly_hotfix.css" type="text/css">
 </head>
 <body>
     <a id="top"></a>
@@ -17,7 +19,7 @@
         <h3 class="warning-banner preview-banner">Vigyázat! Előnézeti módban van!</h3>
         <a href="index.html" id="site-logo">
             <!--<img src="graphics/site-profile.png">-->
-            <img src="graphics/site-profile.svg">
+            <img src="graphics/site-profile.svg" alt="Oldal-logó">
         </a>
         <div id="site-main-header">
             <a href="index.html">
@@ -115,7 +117,7 @@
                 </div>
                 <article class="item-discount product-block">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
-                    <img src="graphics/8857336938526.webp" width="100px">
+                    <img src="graphics/8857336938526.webp" width="100" height="100" alt="Termék-kép">
                     <dl class="description">
                         <div>
                             <dt>Kapacitás (kg)</dt>
@@ -170,7 +172,7 @@
                 </article>
                 <article class="item-shortage product-block">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
-                    <img src="graphics/8857336938526.webp" width="100px">
+                    <img src="graphics/8857336938526.webp" width="100" height="100" alt="Termék-kép">
                     <p class="no_description">Jelenleg nem érhető el leírás</p>
                     <dl class="item-pricing">
                         <div class="old-price">
@@ -193,7 +195,7 @@
                 </article>
                 <article class="item-shortage product-block">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
-                    <img src="graphics/8857336938526.webp" width="100px">
+                    <img src="graphics/8857336938526.webp" width="100" height="100" alt="Termék-kép">
                     <p class="no_description">Jelenleg nem érhető el leírás</p>
                     <dl class="item-pricing">
                         <div class="old-price">
@@ -216,7 +218,7 @@
                 </article>
                 <article class="item-shortage product-block">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
-                    <img src="graphics/8857336938526.webp" width="100px">
+                    <img src="graphics/8857336938526.webp" width="100" height="100" alt="Termék-kép">
                     <p class="no_description">Jelenleg nem érhető el leírás</p>
                     <dl class="item-pricing">
                         <div class="old-price">
@@ -239,7 +241,8 @@
                 </article>
                 <section class="modpanel-section-additem">
                     <a href="administer.php">
-                        <span><p>Új</p> hozzáadása<br></span>/Meglévő módosítása
+                        <h3>Új</h3><span> hozzáadása</span>
+                            <br>/Meglévő módosítása
                     </a>
                 </section>
 
@@ -251,20 +254,20 @@
         <table id="opening_hours">
             <caption class="top">Nyitvatartási rend</caption>
             <tr>
-                <th>Nap</th>
-                <th>Nyitva</th>
+                <th id="opening_hours_weekday">Nap</th>
+                <th id="opening_hours_is_opened">Nyitva</th>
             </tr>
             <tr>
-                <td>Hétfő-Péntek</td>
-                <td>8-16 óra</td>
+                <td headers="opening_hours_weekday">Hétfő-Péntek</td>
+                <td headers="opening_hours_is_opened">8-16 óra</td>
             </tr>
             <tr>
-                <td>Szombat</td>
-                <td>8-14 óra</td>
+                <td headers="opening_hours_weekday">Szombat</td>
+                <td headers="opening_hours_is_opened">8-14 óra</td>
             </tr>
             <tr>
-                <td>Vasárnap</td>
-                <td>--</td>
+                <td headers="opening_hours_weekday">Vasárnap</td>
+                <td headers="opening_hours_is_opened">--</td>
             </tr>
         </table>
         <p>

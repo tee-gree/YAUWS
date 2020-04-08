@@ -19,6 +19,11 @@
     display: block;
     text-align: center;
 }
+.banner > .title {
+    margin: 0;
+    padding: 0.2em;
+    border-top: 0.15em gray solid;
+}
 
 /* Product-block */
     /* Description */
@@ -96,24 +101,34 @@
 
 form {
     margin: 0.5em 0;
-
     padding-top: 0.8em;
+
+    text-align: center;
 }
 form fieldset {
-    max-width: 50%;
-    display: block;
-    margin: auto;
-    text-align: right;
+    display: inline-block;
+    min-width: 50%;
+
     padding-right: 1.5em;
 
     border-width: 0;
     border-top-width: initial;
+
+    margin-top: 1.8em;
+
+    text-align: right;
 }
-form fieldset legend {
+form legend {
     margin-top: -0.8em;
 }
-form fieldset input {
+form input {
+    text-align: right;
+}
+form input, form textarea {
     margin: 0.2em 0;
+    font-size: 1em;
+
+    box-sizing: border-box;
 }
 
 form.binary-checking .warning-banner {
@@ -143,9 +158,6 @@ form.binary-checking
 
 table td, table th {
     padding: 0.1em 1em;
-}
-table td input {
-    display: block;
 }
 table caption.top {
     caption-side: top;

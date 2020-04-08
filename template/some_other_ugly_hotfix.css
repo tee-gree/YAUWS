@@ -1,0 +1,6 @@
+
+a#site-logo img:hover, #site-main-header a:hover,
+ a.login-banner:hover, .login-banner a:hover,
+ .cart-summary a:hover, .breadcrumb a:hover, #footer-data a:hover {
+    outline: 0.2em gray solid;
+}

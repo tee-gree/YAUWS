@@ -23,6 +23,9 @@ header a, .cart-summary a, .item-section a, .breadcrumb a, .knobs a {
     font-size: 1.1em;
     font-weight: bold;
 }
+.banner > .title {
+    background-color: #C5C1C0;
+}
 #gpdr-info {
     background-color: #C5C1C0;
 }
@@ -170,7 +173,8 @@ footer {
 /* --------- Fonts & Text styling --------- */
 
 /* Site and form header */
-#site-title, #site-description, form fieldset legend, .knobs > * { 
+#site-title, #site-description,
+ form fieldset legend, input, textarea, .knobs > * { 
     font-family: Impact, Charcoal, sans-serif;
 }
 

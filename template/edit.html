@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Szerkesztő - Zambra tech</title>
+    <title>Adatok - Zambra tech</title>
 
     <link rel="stylesheet" href="site_structure.css" type="text/css">
     <link rel="stylesheet" href="theme_palette.css" type="text/css">
@@ -10,13 +10,72 @@
     <link rel="stylesheet" href="theme_shopping-cart.css" type="text/css">
     <link rel="stylesheet" href="theme_listing.css" type="text/css">
     <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
+
+    <link rel="stylesheet" href="some_other_ugly_hotfix.css" type="text/css">
+    <style>
+    .product-block {
+        line-height: 1.3em;
+        font-size: 1.1em;
+    }
+    .product-block > img {
+        float: left;
+        width: 30%;
+    }
+    .product-block > .description, .product-block > .item-pricing {
+        margin-top: 0.5em;
+
+        margin-left: 35%;
+        max-width: 60%;
+    }
+    .product-block > .description > *:nth-child(2n-1) {
+        background-color: #C5C1C0;
+    }
+    .product-block > .description > *:nth-child(2n-1) {
+        background-color: rgba(220, 220, 220, 0.5);
+    }
+    table input, table textarea {
+        text-align: center;
+    }
+    textarea.inputting-user-address {
+        min-height: 7em;
+    }
+
+    /* TODO: triangle at top-left (like textareas have) */
+    #form-addressing + * .banner {
+        background-color: rgba(220, 220, 220, 0.5);
+        border: rgb(220, 220, 220) solid;
+        border-width: 0 0.15em;
+
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #form-addressing + * .banner p {
+        margin: 0.5em 0 0;
+    }
+    .banner .highlight {
+        background-color: yellow;
+    }
+    a.highlight {
+        color: black;
+        font-family: Arial;
+    }
+    .banner a.highlight {
+        background-color: initial;
+    }
+    .highlight.block {
+        display: block;
+    }
+    a.highlight::before { content: '<' }
+    a.highlight::after { content: '>' }
+    </style>
 </head>
 <body>
     <a id="top"></a>
     <header>
         <a href="index.html" id="site-logo">
             <!--<img src="graphics/site-profile.png">-->
-            <img src="graphics/site-profile.svg">
+            <img src="graphics/site-profile.svg" alt="Oldal-logó">
         </a>
         <div id="site-main-header">
             <a href="index.html">
@@ -102,208 +161,155 @@
         <div id="main-content">
             <section class="data-view">
             <h2>?view=profile</h2>
-                <table>
-                    <caption class="top">Belépési adatok</caption>
-                    <tr>
-                        <th scope="row">Teljes név</th>
-                        <td>John Smith</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">E-mail cím</th>
-                        <td>pcmasterrace@example.com</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Jelszó</th>
-                        <td><a href="edit.html?view=profile">&lt;Jelszó megváltoztatása&gt;</a></td>
-                    </tr>
-                </table>
-                <table>
-                    <caption class="top">Jogosultság</caption>
-                    <tr>
-                        <th scope="row">Státusz</th>
-                        <td>Készlet-felügyelő</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Raktárkezelés</th>
-                        <td><a href="show.html?view=product_list">&lt;Készletrendező&gt;</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Rendelések</th>
-                        <td><a href="show.html?view=order_list">&lt;Rendelés-nyilvántartó&gt;</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Felhasználók</th>
-                        <td><a href="show.html?view=profile_list">&lt;Felhasználók&gt;</a></td>
-                    </tr>
-                </table>
-                <form class="binary-checking" method="post" action="edit.php?region=profile&group=addressing">
+                <form method="post" action="applyProfile.php?region=profile&group=general">
                     <fieldset>
-                        <legend>Cím-adatbázis</legend>
-                        <input type="radio" id="addressing_1"
-                             name="addressing-id[]" value="1">
-                        <label for="addressing_1">
-                            1. John Smith, 2508, Árvíztűrő Tükörfúrógép
+                        <legend>Belépési adatok</legend>
+                        <label>
+                            Megszólítás:
+                            <input name="profile-nickname" disabled="disabled"
+                                value="Altavista">
                         </label><br>
-                        <input type="radio" id="addressing_2"
-                             name="addressing-id[]" value="2" checked="checked">
-                        <label for="addressing_2">
-                            2. Tony Amato, 958, The quick brown fox jumps over the lazy dog
+                        <label>
+                            E-mail cím:
+                            <input type="email" name="profile-email"
+                                value="pcmasterrace@example.com">
                         </label><br>
-
+                        <label>
+                            Telefonszám:
+                            <input type="tel" name="profile-email"
+                                value="844-555-0172">
+                        </label><br>
+                        <input type="submit" name="profile-general-form" value="Küldés">
+                    </fieldset>
+                </form>
+                <form method="post" action="applyProfile.php?region=profile&group=password">
+                    <fieldset>
+                        <legend>Jelszó változtatása</legend>
+                        <label>
+                            Korábbi jelszó:
+                            <input type="password" name="profile-old-password">
+                        </label><br>
+                        <label>
+                            Új jelszó:
+                            <input type="password" name="profile-password-1">
+                        </label><br>
+                        <label>
+                            Új jelszó (újra):
+                            <input type="password" name="profile-password-2">
+                        </label><br>
+                        <input type="submit" name="profile-password-form" value="Küldés">
+                    </fieldset>
+                </form>
+                <a id="form-addressing"></a>
+                <form method="post" action="edit.php?region=profile&group=addressing-detail">
+                    <fieldset>
+                        <legend>Aktív számlázási/szállítási cím szerkesztése</legend>
+                        <div class="banner">
+                            <p class="title">Fontos!</p>
+                            <p>
+                                Ha szeretné
+                                <span class="highlight">szétválasztani/egyesíteni</span>
+                                a számlázási és a szállítási címeket, esetleg egy
+                                <span class="highlight">korábban megadott</span>
+                                címet szeretne újra használni, azt
+                                <a href="show.html?view=profile"
+                                    class="highlight block">ITT</a> teheti meg.
+                            </p>
+                        </div>
                         <table>
                             <caption class="top">Aktív számlázási cím</caption>
                             <tr>
-                                <th scope="row">Név</th>
-                                <td>John Smith</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lakcím</th>
-                                <td>
-                                    Mozilla<br>
-                                    331 E. Evelyn Avenue<br>
-                                    Mountain View, CA<br>
-                                    94041<br>
-                                    USA<br>
+                                <th scope="row" id="billing-full-name">
+                                    Név
+                                </th>
+                                <td headers="billing-full-name">
+                                    <input name="addressing-full-name"
+                                        value="John Smith">
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">E-mail</th>
-                                <td>pcmasterrace@example.com</td>
+                                <th scope="row" id="billing-address">
+                                    Lakcím
+                                </th>
+                                <td headers="billing-address">
+                                    <textarea class="inputting-user-address">
+Mozilla
+331 E. Evelyn Avenue
+Mountain View, CA
+94041
+USA</textarea>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">Telefonszám</th>
-                                <td>844-555-0172</td>
+                                <th scope="row" id="billing-email">
+                                    E-mail
+                                </th>
+                                <td headers="billing-email">
+                                    <input type="email" name="addressing-email"
+                                        value="pcmasterrace@example.com">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="billing-phone">
+                                    Telefonszám
+                                </th>
+                                <td headers="billing-phone">
+                                    <input name="addressing-phone"
+                                        value="844-555-0172">
+                                </td>
                             </tr>
                         </table>
 
-                        <input type="checkbox" id="is_delivery_same"
-                             name="is_delivery_same" value="checked" checked="checked">
-                        <label for="is_delivery_same">
-                            A szállítási cím megegyezik a számlázási címmel.
-                        </label><br>
-                        <p class="warning-banner">
-                            Adatmódosítás történt.<br>
-                            Küldje el az űrlapot, mielőtt továbblépne!
-                        </p>
-                        <input type="submit" name="user_addressing_form" value="Küldés">
+                        <table>
+                            <caption class="top">Aktív szállítási cím</caption>
+                            <tr>
+                                <th scope="row" id="billing-full-name">
+                                    Név
+                                </th>
+                                <td headers="billing-full-name">
+                                    <input name="addressing-full-name"
+                                        disabled="disabled"
+                                        value="John Smith">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="billing-address">
+                                    Lakcím
+                                </th>
+                                <td headers="billing-address">
+                                    <textarea class="inputting-user-address"
+                                        disabled="disabled">
+Mozilla
+331 E. Evelyn Avenue
+Mountain View, CA
+94041
+USA</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="billing-email">
+                                    E-mail
+                                </th>
+                                <td headers="billing-email">
+                                    <input type="email" name="addressing-email"
+                                        disabled="disabled"
+                                        value="pcmasterrace@example.com">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="billing-phone">
+                                    Telefonszám
+                                </th>
+                                <td headers="billing-phone">
+                                    <input name="addressing-phone"
+                                        disabled="disabled"
+                                        value="844-555-0172">
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="submit" name="user_addressing_detail_form" value="Küldés">
                     </fieldset>
                 </form>
-                <table>
-                    <caption class="bottom">Rendeléseim</caption>
-                    <tr>
-                        <th scope="col">Termékek</th>
-                        <th scope="col">Rendelés dátuma</th>
-                        <th scope="col">Állapot</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p><a href="show.html?view=product&id=1">
-                                RUSSELL-HOBBS 18036-56 Kenyérsütő
-                            </a></p>
-                        </td>
-                        <td>2020. április 1.</td>
-                        <td>Fizetetlen <a href="summary.html?view=order&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Befizetés" title="Befizetés">
-                        </a></td>
-                    </tr>
-                </table>
-            </section>
-            <section class="data-view">
-            <h2>?view=product_list</h2>
-                <div class="knobs">
-                    <span class="active">Idő szerint</span>
-                </div>
-                <div class="knobs"><a
-                    href="show.html?view=product_list&sort_order=asc">Növekvő</a><a
-                    href="" class="active">Csökkenő</a>
-                </div>
-                <div class="knobs"><a
-                    href="edit.html?view=product_list">Szerkesztés</a>
-                </div>
-                <table>
-                    <caption class="bottom">Árukészlet</caption>
-                    <tr>
-                        <th scope="col"><span alt="Azonosító">#</span></th>
-                        <th scope="col">Termék</th>
-                        <th scope="col">Mennyiség</th>
-                        <th scope="col"></th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="show.html?view=product&id=1">
-                            RUSSELL-HOBBS 18036-56 Kenyérsütő
-                        </a></td>
-                        <td>3</td>
-                        <td><a href="edit.html?view=product&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Szerkesztés" title="Szerkesztés">
-                        </a></td>
-                    </tr>
-                </table>
-                <div class="knobs paging">
-                    <span class="active">1</span>
-                </div>
-            </section>
-            <section class="data-view">
-            <h2>?view=profile_list</h2>
-                <table>
-                    <caption class="bottom">Felhasználók</caption>
-                    <tr>
-                        <th scope="col"><span alt="Azonosító">#</span></th>
-                        <th scope="col">Felhasználó</th>
-                        <th scope="col"></th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="show.html?view=profile&id=1">
-                            Altavista
-                        </a></td>
-                        <td><a href="edit.html?view=profile&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Módosítás" title="Módosítás">
-                        </a></td>
-                    <tr>
-                    </tr>
-                        <td>2</td>
-                        <td><a href="show.html?view=profile&id=2">
-                            Raken
-                        </a></td>
-                        <td><a href="edit.html?view=profile&id=2">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Módosítás" title="Módosítás">
-                        </a></td>
-                    </tr>
-                </table>
-            </section>
-            <section class="data-view">
-            <h2>?view=order_list</h2>
-                <table>
-                    <caption class="bottom">Megrendelések</caption>
-                    <tr>
-                        <th scope="col"><span alt="Azonosító">#</span></th>
-                        <th scope="col">Megrendelő</th>
-                        <th scope="col">Rendelt áru</th>
-                        <th scope="col">Átvétel/Állapot</th>
-                        <th scope="col"></th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="show.html?view=profile&id=1">
-                            Altavista
-                        </a></td>
-                        <td>
-                            <p><a href="show.html?view=product&id=1">
-                                (1) RUSSELL-HOBBS 18036-56 Kenyérsütő
-                            </a></p>
-                        </td>
-                        <td>Fizetés alatt</td>
-                        <td><a href="edit.html?view=order&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Szerkesztés" title="Szerkesztés">
-                        </a></td>
-                    </tr>
-                </table>
             </section>
         </div>
     </main>
@@ -311,20 +317,20 @@
         <table id="opening_hours">
             <caption class="top">Nyitvatartási rend</caption>
             <tr>
-                <th>Nap</th>
-                <th>Nyitva</th>
+                <th id="opening_hours_weekday">Nap</th>
+                <th id="opening_hours_is_opened">Nyitva</th>
             </tr>
             <tr>
-                <td>Hétfő-Péntek</td>
-                <td>8-16 óra</td>
+                <td headers="opening_hours_weekday">Hétfő-Péntek</td>
+                <td headers="opening_hours_is_opened">8-16 óra</td>
             </tr>
             <tr>
-                <td>Szombat</td>
-                <td>8-14 óra</td>
+                <td headers="opening_hours_weekday">Szombat</td>
+                <td headers="opening_hours_is_opened">8-14 óra</td>
             </tr>
             <tr>
-                <td>Vasárnap</td>
-                <td>--</td>
+                <td headers="opening_hours_weekday">Vasárnap</td>
+                <td headers="opening_hours_is_opened">--</td>
             </tr>
         </table>
         <p>

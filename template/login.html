@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="theme_listing.css" type="text/css">
     <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
     <style rel="stylesheet">
+        /* Hiding side-panel
         #side-panel {
             display: none;
         }
@@ -20,14 +21,19 @@
         #main-content > * {
             border-right: 0;
         }
+        */
+        .login-banner {
+            display: none !important;
+        }
     </style>
+    <link rel="stylesheet" href="some_other_ugly_hotfix.css" type="text/css">
 </head>
 <body>
     <a id="top"></a>
     <header>
         <a href="index.html" id="site-logo">
             <!--<img src="graphics/site-profile.png">-->
-            <img src="graphics/site-profile.svg">
+            <img src="graphics/site-profile.svg" alt="Oldal-logó">
         </a>
         <div id="site-main-header">
             <a href="index.html">
@@ -151,20 +157,20 @@
         <table id="opening_hours">
             <caption class="top">Nyitvatartási rend</caption>
             <tr>
-                <th>Nap</th>
-                <th>Nyitva</th>
+                <th id="opening_hours_weekday">Nap</th>
+                <th id="opening_hours_is_opened">Nyitva</th>
             </tr>
             <tr>
-                <td>Hétfő-Péntek</td>
-                <td>8-16 óra</td>
+                <td headers="opening_hours_weekday">Hétfő-Péntek</td>
+                <td headers="opening_hours_is_opened">8-16 óra</td>
             </tr>
             <tr>
-                <td>Szombat</td>
-                <td>8-14 óra</td>
+                <td headers="opening_hours_weekday">Szombat</td>
+                <td headers="opening_hours_is_opened">8-14 óra</td>
             </tr>
             <tr>
-                <td>Vasárnap</td>
-                <td>--</td>
+                <td headers="opening_hours_weekday">Vasárnap</td>
+                <td headers="opening_hours_is_opened">--</td>
             </tr>
         </table>
         <p>

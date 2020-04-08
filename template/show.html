@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="theme_listing.css" type="text/css">
     <link rel="stylesheet" href="theme_webmaster.css" type="text/css">
 
+    <link rel="stylesheet" href="some_other_ugly_hotfix.css" type="text/css">
 <style>
 .product-block {
     line-height: 1.3em;
@@ -39,7 +40,7 @@
     <header>
         <a href="index.html" id="site-logo">
             <!--<img src="graphics/site-profile.png">-->
-            <img src="graphics/site-profile.svg">
+            <img src="graphics/site-profile.svg" alt="Oldal-logó">
         </a>
         <div id="site-main-header">
             <a href="index.html">
@@ -90,8 +91,7 @@
         </nav>
         <p class="login-banner mobile has-session">
             Belépve,&nbsp;mint
-            <a href="show.html?view=profile" class="username">Altavista</a>!<br>
-            (<a href="show.html?view=profile">Profil megtekintése</a>)
+            <span class="username">Altavista</span>!<br>
         </p>
     </header>
     <main>
@@ -114,8 +114,7 @@
             </div>
             <p class="login-banner has-session">
                 Belépve,&nbsp;mint
-                <a href="show.html?view=profile" class="username">Altavista</a>!<br>
-                (<a href="show.html?view=profile">Profil megtekintése</a>)
+                <span class="username">Altavista</span>!<br>
             </p>
             <section id="site-news">
                 <h3 class="title">Hírek</h3>
@@ -128,35 +127,47 @@
                 <table>
                     <caption class="top">Belépési adatok</caption>
                     <tr>
-                        <th scope="row">Teljes név</th>
-                        <td>John Smith</td>
+                        <th scope="row" id="my-account-full-name">Teljes név</th>
+                        <td headers="my-account-full-name">John Smith</td>
                     </tr>
                     <tr>
-                        <th scope="row">E-mail cím</th>
-                        <td>pcmasterrace@example.com</td>
+                        <th scope="row" id="my-account-email-address">E-mail cím</th>
+                        <td headers="my-account-email-address">pcmasterrace@example.com</td>
                     </tr>
                     <tr>
-                        <th scope="row">Jelszó</th>
-                        <td><a href="edit.html?view=profile">&lt;Jelszó megváltoztatása&gt;</a></td>
+                        <th scope="row" id="my-account-password">Jelszó</th>
+                        <td headers="my-account-password">********</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="my-account-operation">Módosítás</th>
+                        <td headers="my-account-operation"><a href="edit.html?view=profile">
+                            &lt;Adat-frissítés&gt;
+                        </a></td>
                     </tr>
                 </table>
                 <table>
                     <caption class="top">Jogosultság</caption>
                     <tr>
-                        <th scope="row">Státusz</th>
-                        <td>Készlet-felügyelő</td>
+                        <th scope="row" id="account-status">Státusz</th>
+                        <td headers="account-status">Készlet-felügyelő</td>
                     </tr>
                     <tr>
-                        <th scope="row">Raktárkezelés</th>
-                        <td><a href="show.html?view=product_list">&lt;Készletrendező&gt;</a></td>
+                        <th scope="row" id="task-stock-managing">Raktárkezelés</th>
+                        <td headers="task-stock-managing">
+                            <a href="show.html?view=product_list">&lt;Készletrendező&gt;</a>
+                        </td>
                     </tr>
                     <tr>
-                        <th scope="row">Rendelések</th>
-                        <td><a href="show.html?view=order_list">&lt;Rendelés-nyilvántartó&gt;</a></td>
+                        <th scope="row" id="task-order-managing">Rendelések</th>
+                        <td headers="task-order-managing">
+                            <a href="show.html?view=order_list">&lt;Rendelés-nyilvántartó&gt;</a>
+                        </td>
                     </tr>
                     <tr>
-                        <th scope="row">Felhasználók</th>
-                        <td><a href="show.html?view=profile_list">&lt;Felhasználók&gt;</a></td>
+                        <th scope="row" id="task-user-administrating">Felhasználók</th>
+                        <td headers="task-user-administrating">
+                            <a href="show.html?view=profile_list">&lt;Felhasználók&gt;</a>
+                        </td>
                     </tr>
                 </table>
                 <form class="binary-checking" method="post" action="edit.php?region=profile&group=addressing">
@@ -176,12 +187,12 @@
                         <table>
                             <caption class="top">Aktív számlázási cím</caption>
                             <tr>
-                                <th scope="row">Név</th>
-                                <td>John Smith</td>
+                                <th scope="row" id="billing-full-name">Név</th>
+                                <td headers="billing-full-name">John Smith</td>
                             </tr>
                             <tr>
-                                <th scope="row">Lakcím</th>
-                                <td>
+                                <th scope="row" id="billing-address">Lakcím</th>
+                                <td headers="billing-address">
                                     Mozilla<br>
                                     331 E. Evelyn Avenue<br>
                                     Mountain View, CA<br>
@@ -190,12 +201,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">E-mail</th>
-                                <td>pcmasterrace@example.com</td>
+                                <th scope="row" id="billing-email">E-mail</th>
+                                <td headers="billing-email">pcmasterrace@example.com</td>
                             </tr>
                             <tr>
-                                <th scope="row">Telefonszám</th>
-                                <td>844-555-0172</td>
+                                <th scope="row" id="billing-phone">Telefonszám</th>
+                                <td headers="billing-phone">844-555-0172</td>
                             </tr>
                         </table>
 
@@ -208,27 +219,30 @@
                             Adatmódosítás történt.<br>
                             Küldje el az űrlapot, mielőtt továbblépne!
                         </p>
+                        <a href="edit.html?view=profile#form-addressing">&lt;Szerkesztés...&gt;</a>
                         <input type="submit" name="user_addressing_form" value="Küldés">
                     </fieldset>
                 </form>
                 <table>
                     <caption class="bottom">Rendeléseim</caption>
                     <tr>
-                        <th scope="col">Termékek</th>
-                        <th scope="col">Rendelés dátuma</th>
-                        <th scope="col">Állapot</th>
+                        <th scope="col" id="my-ordered-items">Termékek</th>
+                        <th scope="col" id="my-order-date">Rendelés dátuma</th>
+                        <th scope="col" id="my-order-status">Állapot</th>
                     </tr>
                     <tr>
-                        <td>
+                        <td headers="my-ordered-items">
                             <p><a href="show.html?view=product&id=1">
                                 RUSSELL-HOBBS 18036-56 Kenyérsütő
                             </a></p>
                         </td>
-                        <td>2020. április 1.</td>
-                        <td>Fizetetlen <a href="summary.html?view=order&id=1">
-                            <img src="graphics/351525.png" width="25px"
+                        <td headers="my-order-date">2020. április 1.</td>
+                        <td headers="my-order-status">
+                            Fizetetlen <a href="summary.html?view=order&id=1">
+                            <img src="graphics/351525.png" width="25" height="25"
                                 alt="Befizetés" title="Befizetés">
-                        </a></td>
+                            </a>
+                        </td>
                     </tr>
                 </table>
             </section>
@@ -244,7 +258,7 @@
                 </div>
                 <article class="product-block item-discount">
                     <h3>RUSSELL-HOBBS 18036-56 Kenyérsütő</h3>
-                    <img src="graphics/8857336938526.webp" width="100px">
+                    <img src="graphics/8857336938526.webp" width="100" height="100" alt="Termék-kép">
                     <dl class="description">
                         <div>
                             <dt>Kapacitás (kg)</dt>
@@ -313,20 +327,21 @@
                 <table>
                     <caption class="bottom">Árukészlet</caption>
                     <tr>
-                        <th scope="col"><span alt="Azonosító">#</span></th>
-                        <th scope="col">Termék</th>
-                        <th scope="col">Mennyiség</th>
-                        <th scope="col"></th>
+                        <th scope="col" id="stock-id"><span>#</span></th>
+                        <th scope="col" id="stock-item">Termék</th>
+                        <th scope="col" id="stock-item-quantity">Mennyiség</th>
+                        <th scope="col" id="stock-operation"></th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td><a href="show.html?view=product&id=1">
+                        <td headers="stock-id">1</td>
+                        <td headers="stock-item"><a href="show.html?view=product&id=1">
                             RUSSELL-HOBBS 18036-56 Kenyérsütő
                         </a></td>
-                        <td>3</td>
-                        <td><a href="edit.html?view=product&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Szerkesztés" title="Szerkesztés">
+                        <td headers="stock-item-quantity">3</td>
+                        <td headers="stock-operation">
+                            <a href="edit.html?view=product&id=1">
+                                <img src="graphics/351525.png" width="25" height="25"
+                                    alt="Szerkesztés" title="Szerkesztés">
                         </a></td>
                     </tr>
                 </table>
@@ -339,29 +354,41 @@
                 <table>
                     <caption class="bottom">Felhasználók</caption>
                     <tr>
-                        <th scope="col"><span alt="Azonosító">#</span></th>
-                        <th scope="col">Felhasználó</th>
-                        <th scope="col"></th>
+                        <th scope="col" id="profile-id"><span>#</span></th>
+                        <th scope="col" id="profile-nickname">Felhasználó</th>
+                        <th scope="col" id="profile-operation"></th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td><a href="show.html?view=profile&id=1">
-                            Altavista
-                        </a></td>
-                        <td><a href="edit.html?view=profile&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Módosítás" title="Módosítás">
-                        </a></td>
-                    <tr>
+                        <td headers="profile-id">
+                            1
+                        </td>
+                        <td headers="profile-nickname">
+                            <a href="show.html?view=profile&id=1">
+                                Altavista
+                            </a>
+                        </td>
+                        <td headers="profile-operation">
+                            <a href="edit.html?view=profile&id=1">
+                                <img src="graphics/351525.png" width="25" height="25"
+                                    alt="Módosítás" title="Módosítás">
+                            </a>
+                        </td>
                     </tr>
-                        <td>2</td>
-                        <td><a href="show.html?view=profile&id=2">
-                            Raken
-                        </a></td>
-                        <td><a href="edit.html?view=profile&id=2">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Módosítás" title="Módosítás">
-                        </a></td>
+                    <tr>
+                        <td headers="profile-id">
+                            2
+                        </td>
+                        <td headers="profile-nickname">
+                            <a href="show.html?view=profile&id=2">
+                                Raken
+                            </a>
+                        </td>
+                        <td headers="profile-operation">
+                            <a href="edit.html?view=profile&id=2">
+                                <img src="graphics/351525.png" width="25" height="25"
+                                    alt="Módosítás" title="Módosítás">
+                            </a>
+                        </td>
                     </tr>
                 </table>
             </section>
@@ -370,27 +397,31 @@
                 <table>
                     <caption class="bottom">Megrendelések</caption>
                     <tr>
-                        <th scope="col"><span alt="Azonosító">#</span></th>
-                        <th scope="col">Megrendelő</th>
-                        <th scope="col">Rendelt áru</th>
-                        <th scope="col">Átvétel/Állapot</th>
-                        <th scope="col"></th>
+                        <th scope="col" id="order-id"><span>#</span></th>
+                        <th scope="col" id="ordered-by">Megrendelő</th>
+                        <th scope="col" id="ordered-items">Rendelt áru</th>
+                        <th scope="col" id="order-status">Átvétel/Állapot</th>
+                        <th scope="col" id="order-action"></th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td><a href="show.html?view=profile&id=1">
+                        <td headers="order-id">1</td>
+                        <td headers="ordered-by"><a href="show.html?view=profile&id=1">
                             Altavista
                         </a></td>
-                        <td>
-                            <p><a href="show.html?view=product&id=1">
-                                (1) RUSSELL-HOBBS 18036-56 Kenyérsütő
-                            </a></p>
+                        <td headers="ordered-items">
+                            <p>
+                                <a href="show.html?view=product&id=1">
+                                    (1) RUSSELL-HOBBS 18036-56 Kenyérsütő
+                                </a>
+                            </p>
                         </td>
-                        <td>Fizetés alatt</td>
-                        <td><a href="edit.html?view=order&id=1">
-                            <img src="graphics/351525.png" width="25px"
-                                alt="Szerkesztés" title="Szerkesztés">
-                        </a></td>
+                        <td headers="order-status">Fizetés alatt</td>
+                        <td headers="order-action">
+                            <a href="edit.html?view=order&id=1">
+                                <img src="graphics/351525.png" width="25" height="25"
+                                    alt="Szerkesztés" title="Szerkesztés">
+                            </a>
+                        </td>
                     </tr>
                 </table>
             </section>
@@ -400,20 +431,20 @@
         <table id="opening_hours">
             <caption class="top">Nyitvatartási rend</caption>
             <tr>
-                <th>Nap</th>
-                <th>Nyitva</th>
+                <th id="opening_hours_weekday">Nap</th>
+                <th id="opening_hours_is_opened">Nyitva</th>
             </tr>
             <tr>
-                <td>Hétfő-Péntek</td>
-                <td>8-16 óra</td>
+                <td headers="opening_hours_weekday">Hétfő-Péntek</td>
+                <td headers="opening_hours_is_opened">8-16 óra</td>
             </tr>
             <tr>
-                <td>Szombat</td>
-                <td>8-14 óra</td>
+                <td headers="opening_hours_weekday">Szombat</td>
+                <td headers="opening_hours_is_opened">8-14 óra</td>
             </tr>
             <tr>
-                <td>Vasárnap</td>
-                <td>--</td>
+                <td headers="opening_hours_weekday">Vasárnap</td>
+                <td headers="opening_hours_is_opened">--</td>
             </tr>
         </table>
         <p>
